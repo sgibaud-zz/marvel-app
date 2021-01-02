@@ -1,0 +1,40 @@
+body{
+    background: #080C14;
+}
+
+.carousel{
+    margin-top: 100px;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.carousel-inner{
+    border-radius: 10px;
+    border: 1.5px solid #080C14;
+}
+
+.carousel-inner:hover{
+    border: 1.5px solid white;
+}
+
+.carousel-indicators{
+    margin-bottom: 0;
+}
+
+.carousel-control-prev,
+.carousel-control-next
+{
+    width: 5%;
+    opacity: 0.8;
+}
+
+img{
+    height: auto;
+}
+
+.carousel-indicators li{
+    width: 10px;
+    height: 3px;
+}
