@@ -1,0 +1,119 @@
+/*Définition du logo*/
+#logo{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    
+
+}
+
+#sizeLogo{
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid darkgrey 4px ;
+
+}
+
+/*fin définition du logo*/
+
+/*Définition du titre de la page*/
+h4{
+    font-family: Avenir-Heavy, sans-serif;
+    color: darkgrey;
+    font-size: 20px;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: 1,4;
+    display: flex ;
+    justify-content: center;
+    padding: 40px;
+
+}
+/*fin définition du titre de la page*/
+
+/*définition des cards*/
+.heroesCard{
+    width: 272px;
+    height: 166px;
+    border-radius: 5px;
+    margin: 30px;
+    
+
+}
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 30px;
+    
+}
+
+
+.heroesCard:hover{
+
+    border: solid darkgrey 3px ;
+    transform: scale(1.1);
+    transition: 0.5s linear;
+    cursor: pointer;
+}
+
+    
+
+/*fin définition des cards*/
+
+/*définition Modal*/
+.modalHeader{
+    color: pink;
+    background-color: red;
+}
+
+.modalHeader h2{
+    display: flex;
+    justify-content: center;
+}
+
+#imgModal{
+    width: 272px;
+    height: 166px;
+}
+
+.heroesImg{
+    display: flex;
+    justify-content: center;
+}
+
+.modalFooter{
+    display: flex;
+    justify-content: center;
+}
+
+/*Fin définnition Modal*/
+
+@media (max-width: 768px) {
+        #sizeLogo{
+            height: 75px;
+            width: 100px;  
+        }
+
+        h4{
+          font-size: 10px;  
+        }
+   
+    .heroesCard{
+        width: 100px;
+        height: 50px;
+        margin: 20px;
+        justify-content: center;
+    }
+
+    .heroesCard:hover{
+        border: solid darkgrey 2px ; 
+        cursor: pointer; 
+        
+    }
+
+
+}
