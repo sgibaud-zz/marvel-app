@@ -1,9 +1,20 @@
 import React, { Component } from "react";
+
+
 import NavBar from "./components/NavBar";
 import SideNavBar from "./components/SideNavBar";
 import BackDrop from "./components/BackDrop";
-import "./components/layout.css";
 import HeroCarousel from "./components/HeroCarousel";
+import ImageSlider from './components/marvelCat';
+import Container from 'react-bootstrap/Container';
+import Footer from './components/footer';
+import MarvelCard from './components/marvelCard';
+import SearchAppBar from './components/searchBar';
+
+/* import CSS */
+import "bootstrap/dist/css/bootstrap.min.css";
+import './index.css';
+import "./components/layout.css";
 
 
 
@@ -42,7 +53,17 @@ class App extends Component {
         
         <div>
           <HeroCarousel />
+
+          <Container>
+          <ImageSlider />
+          <SearchAppBar />
+          <MarvelCard />
+          <Footer />
+          </Container>
         </div>
+
+
+        
 
 
       </div>

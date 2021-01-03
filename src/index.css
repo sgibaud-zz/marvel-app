@@ -2,15 +2,45 @@ html{
   height: 100%;
 }
 
-
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #080b13;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+/* css marvel app */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+div {
+  padding: 0;
+}
+
+
+/* gestion des titres flex */
+h1, h2, h3, h4, h5, h6 {
+  display: flex;
+  color: white;
+  padding: 0;
+}
+
+a {
+  cursor: pointer;
 }

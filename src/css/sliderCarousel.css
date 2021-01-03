@@ -1,0 +1,92 @@
+.marvelCatImg {
+  width: 10rem;
+  border-radius: 0.2rem;
+  opacity: 0.65;
+
+}
+
+.marvelCatImg:hover {
+  box-shadow: 0px 0px 0px 0.2rem #d4d4d4;
+  transform: scale(1.1);
+  transition: .5s linear !important;
+  opacity: 1;
+}
+
+.marvelImage {
+  margin: 1.5rem 1rem 1.5rem 1rem;
+}
+
+
+/* carousel */
+
+.slick-disabled {
+  visibility: hidden;
+}
+
+.slick-next {
+  right: 0.2rem;
+}
+
+.slick-prev {
+  left: 0.25rem;
+}
+
+.slick-prev, .slick-next {
+  color: transparent;
+  position: absolute;
+  z-index: 1;
+  outline: 0 none;
+  outline-color: initial;
+  outline-style: none;
+  outline-width: 0px;
+  height: 75%;
+  width: 2rem;
+  transition: opacity .25s ease-in-out,background-color .25s ease-in-out;
+  background-color: rgba(15,23,30,.5);
+}
+
+.slick-prev:hover, .slick-next:hover {
+  color: rgba(15,23,30,.5);
+  outline: none;
+  background: rgba(255, 254, 254, 0.2);
+}
+
+.slick-next:before {
+  opacity: 0.75;
+  content:URL('../images/next.svg');
+}
+
+.slick-prev:before {
+  opacity: 0.75;
+  content:url('../images/prev.svg');
+}
+
+.slick-slide {
+  padding: 0.2rem 0 !important;
+}
+
+/* traitement H3 */
+
+.titreH3 {
+  margin-left: 1.25rem;
+}
+
+/* media Query */
+
+@media only screen and (max-width: 576px) {
+  .marvelCatImg {
+    width: 80%;
+  }
+
+  .slick-slide {
+    padding: 5%;
+  }
+
+  .slick-prev, .slick-next {
+    height: 80%;
+    width: 40px;
+  }
+  .titreH3 {
+    font-size: calc(28px / 1.3);
+  }
+}
