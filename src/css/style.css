@@ -1,0 +1,51 @@
+/* gestion footer */
+.row {
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+#logo {
+  background-image: url("../images/logo_marvel.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 6rem;
+  height: 2.4rem;
+  align-self: center;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+/* gestion des liens dans le Col du footer */
+.footerCol {
+  display: inline-flex;
+  justify-content: center;
+  white-space: normal;
+  padding: 0.15rem;
+  color: #8197a4;
+  font-size: 0.8rem;
+  list-style: none;
+}
+
+.footerCol > a {
+  color: #79b8f3;
+  text-decoration: none;
+}
+
+.footerCol > a:hover {
+  color: #90dffe;
+  transition: 0.5s ease-in;
+  text-decoration: none;
+}
+
+/* media query footer */
+@media only screen and (max-width: 576px) {
+  #logo {
+    --largeurA: 6rem;
+    --hauteurB: 2.5rem;
+    width: calc(var(--largeurA) / 2);
+    height: calc(var(--hauteurB) / 2);
+  }
+  .footerCol {
+    font-size: calc(0.8rem / 1.3);
+  }
+}
