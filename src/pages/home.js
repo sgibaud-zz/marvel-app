@@ -50,8 +50,6 @@ class Home extends Component {
           <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
         </div>
 
-
-
         <HeroCarousel />
 
         <ImageSlider categorieTitle="Les personnages" />
