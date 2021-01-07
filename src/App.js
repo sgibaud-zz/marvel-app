@@ -14,7 +14,7 @@ import SearchAppBar from './components/searchBar';
 /* import CSS */
 import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css';
-import "./components/layout.css";
+import "../css/layout.css";
 
 
 

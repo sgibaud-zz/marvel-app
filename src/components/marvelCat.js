@@ -16,7 +16,7 @@ class ImageSlider extends Component {
             dots: false,
             infinite: false,
             speed: 350,
-            slidesToShow: 6,
+            slidesToShow: 5,
             slidesToScroll: 3,
             cssEase: 'ease-in-out',
             centerPadding: '5px',
@@ -24,9 +24,9 @@ class ImageSlider extends Component {
             className: 'carousel',
             responsive: [
                 {
-                    breakpoint: 1366,
+                    breakpoint: 1024,
                     settings: {
-                        slidesToShow: 5,
+                        slidesToShow: 4,
                         slidesToScroll: 2,
                         infinite: false,
                         dots: false
@@ -37,6 +37,7 @@ class ImageSlider extends Component {
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 1,
+                        centerPadding: '10px',
                         initialSlide: 0,
                         centerMode: false
                     }
@@ -46,6 +47,7 @@ class ImageSlider extends Component {
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 1,
+                        centerPadding: '10px',
                         infinite: false,
                         dots: false
                     }
@@ -56,9 +58,8 @@ class ImageSlider extends Component {
 
         return (
             <Container>
-
                     <div >
-                        <h3 className='titreH3'>Marvel - Les personnages</h3>
+                        <h3 className='titleSlider'>{this.props.categorieTitle}</h3>
                         <Slider {...settings}>
                             <div className='marvelImage'><a href='#'>
                                 <img src={"./clean_1_19.jpg"} alt='black widow' className='marvelCatImg' /></a>

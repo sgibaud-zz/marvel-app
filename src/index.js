@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Personnages from './pages/personnage';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Personnages />
   </React.StrictMode>,
   document.getElementById('root')
 );

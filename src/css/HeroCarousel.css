@@ -1,13 +1,9 @@
-body{
-    background: #080C14;
-}
-
 .carousel{
-    margin-top: 100px;
     width: 90%;
     margin-right: auto;
     margin-left: auto;
     cursor: pointer;
+    margin-bottom: 2%;
 }
 
 .carousel-inner{
@@ -18,7 +14,7 @@ body{
 .carousel-inner:hover{
     border: 1.5px solid white;
 }
-
+*
 .carousel-indicators{
     margin-bottom: 0;
 }
