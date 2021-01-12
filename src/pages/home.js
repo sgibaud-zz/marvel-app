@@ -12,8 +12,7 @@ import Footer from '../components/footer';
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../index.css';
 import "../css/layout.css";
-
-
+import '../css/sliderCarousel.css';
 
 
 
@@ -38,20 +37,17 @@ class Home extends Component {
   render() {
     return (
       <Container>
-
-
         <div>
-          <NavBar open={this.handleOpen} />
-          {this.state.sideBarOpen ? (
-            <div>
-              <BackDrop close={this.handleClose} />{" "}
-            </div>
-          ) : null}
-          <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
+            <NavBar open={this.handleOpen} />
+            {this.state.sideBarOpen ? (
+              <div>
+                <BackDrop close={this.handleClose} />{" "}
+              </div>
+            ) : null}
+            <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
         </div>
 
         <HeroCarousel />
-
         <ImageSlider categorieTitle="Les personnages" />
         <ImageSlider categorieTitle="Les créateurs" />
         <Footer />

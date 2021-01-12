@@ -138,6 +138,8 @@ nav, .side-nav-bar a {
 .side-nav-bar a:hover,
 .side-nav-bar a:active {
   text-shadow: 1px 1px #ff0000;
+  color: white;
+  text-decoration: inherit;
 }
 
 #searchBarMobile {

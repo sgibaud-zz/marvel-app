@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 
 Modal.setAppElement('#root')
 
-function MarvelCard() {
+function MarvelCard(props) {
 
 
 
@@ -25,7 +25,7 @@ function MarvelCard() {
 
                 <div>
 
-                    <h3 className="titleSlider textCenter">Les personnages Marvel</h3>
+                    <h3 className="titleSlider textCenter">{props.cardTitle}</h3>
                     
                     <div className="cardContainer">
 
