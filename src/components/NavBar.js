@@ -5,8 +5,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import {Link} from "react-router-dom";
 
 
-
-
 const NavBar = ({ open }) => {
   return (
     <nav className="nav-bar">
@@ -17,7 +15,7 @@ const NavBar = ({ open }) => {
         <div className="links">
           <Link to="/home">Accueil</Link>
           <Link to="/personnages">Personnages</Link>
-          <Link to="/personnages">Créateurs</Link>
+          <Link to="/createurs">Créateurs</Link>
         </div>
       </div>
       <div onClick={open} className="nav-icon">

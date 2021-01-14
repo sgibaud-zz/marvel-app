@@ -19,7 +19,7 @@ const SideNavBar = ({ close, display }) => {
         <div className="links">
           <Link to="/home">Accueil</Link>
           <Link to="/personnages">Personnages</Link>
-          <Link to="/personnages">Créateurs</Link>
+          <Link to="/createurs">Créateurs</Link>
         </div>
     </nav>
   );

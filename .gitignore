@@ -31,3 +31,9 @@ package.json
 
 # LinkCache
 .eslintcache
+
+# vscode
+.vscode
+
+# key api
+.env

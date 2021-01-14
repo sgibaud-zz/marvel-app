@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 // import CSS
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import '../css/sliderCarousel.css';
+
 
 
 
@@ -19,9 +21,9 @@ class ImageSlider extends Component {
             slidesToShow: 5,
             slidesToScroll: 3,
             cssEase: 'ease-in-out',
-            centerPadding: '5px',
+            //centerPadding: '5px',
             draggable: false,
-            className: 'carousel',
+            className: 'carouselSlider',
             responsive: [
                 {
                     breakpoint: 1024,
@@ -29,7 +31,8 @@ class ImageSlider extends Component {
                         slidesToShow: 4,
                         slidesToScroll: 2,
                         infinite: false,
-                        dots: false
+                        dots: false,
+                        centerPadding: '30px'
                     }
                 },
                 {
@@ -58,53 +61,53 @@ class ImageSlider extends Component {
 
         return (
             <Container>
-                    <div >
+                    <Row>
                         <h3 className='titleSlider'>{this.props.categorieTitle}</h3>
                         <Slider {...settings}>
-                            <div className='marvelImage'><a href='#'>
+                            <Col ><a href='#'>
                                 <img src={"./clean_1_19.jpg"} alt='black widow' className='marvelCatImg' /></a>
-                            </div>
-                            <div className='marvelImage'><a href='#'>
+                            </Col>
+                            <Col ><a href='#'>
                                 <img src={"./clean_1_19.jpg"} alt='black widow' className='marvelCatImg' /></a>
-                            </div>
-                            <div className='marvelImage'><a href='#'>
+                            </Col>
+                            <Col ><a href='#'>
                                 <img src={"./clean_1_19.jpg"} alt='black widow' className='marvelCatImg' /></a>
-                            </div>
-                            <div className='marvelImage'><a href='#'>
+                            </Col>
+                            <Col ><a href='#'>
                                 <img src={"./clean_1_19.jpg"} alt='black widow' className='marvelCatImg' /></a>
-                            </div>
-                            <div className='marvelImage'><a href='#'>
+                            </Col>
+                            <Col ><a href='#'>
                                 <img src={"./clean_1_19.jpg"} alt='black widow' className='marvelCatImg' /></a>
-                            </div>
-                            <div className='marvelImage'><a href='#'>
+                            </Col>
+                            <Col ><a href='#'>
                                 <img src={"./clean_1_19.jpg"} alt='black widow' className='marvelCatImg' /></a>
-                            </div>
-                            <div className='marvelImage'><a href='#'>
+                            </Col>
+                            <Col ><a href='#'>
                                 <img src={"./clean_1_19.jpg"} alt='black widow' className='marvelCatImg' /></a>
-                            </div>
-                            <div className='marvelImage'><a href='#'>
+                            </Col>
+                            <Col ><a href='#'>
                                 <img src={"./clean_1_19.jpg"} alt='black widow' className='marvelCatImg' /></a>
-                            </div>
-                            <div className='marvelImage'><a href='#'>
+                            </Col>
+                            <Col ><a href='#'>
                                 <img src={"./clean_1_19.jpg"} alt='black widow' className='marvelCatImg' /></a>
-                            </div>
-                            <div className='marvelImage'><a href='#'>
+                            </Col>
+                            <Col ><a href='#'>
                                 <img src={"./clean_1_19.jpg"} alt='black widow' className='marvelCatImg' /></a>
-                            </div>
-                            <div className='marvelImage'><a href='#'>
+                            </Col>
+                            <Col ><a href='#'>
                                 <img src={"./clean_1_19.jpg"} alt='black widow' className='marvelCatImg' /></a>
-                            </div>
-                            <div className='marvelImage'><a href='#'>
+                            </Col>
+                            <Col ><a href='#'>
                                 <img src={"./clean_1_19.jpg"} alt='black widow' className='marvelCatImg' /></a>
-                            </div>
-                            <div className='marvelImage'><a href='#'>
+                            </Col>
+                            <Col ><a href='#'>
                                 <img src={"./clean_1_19.jpg"} alt='black widow' className='marvelCatImg' /></a>
-                            </div>
-                            <div className='marvelImage'><a href='#'>
+                            </Col>
+                            <Col ><a href='#'>
                                 <img src={"./clean_1_19.jpg"} alt='black widow' className='marvelCatImg' /></a>
-                            </div>
+                            </Col>
                         </Slider>
-                    </div>
+                    </Row>
 
             </Container>
         );

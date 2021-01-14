@@ -10,7 +10,7 @@ class HeroCarousel extends Component {
             <Carousel>
             <Carousel.Item interval={2000}>
               <img
-                className="d-block w-100"
+                className="d-block w-100 imgCarousel"
                 src="https://shopdisneyeu.scene7.com/is/image/DisneyStoreES/34819_marvel_mania_tb?$tb$"
                 alt="First slide"
               />

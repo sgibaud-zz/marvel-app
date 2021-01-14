@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+
+
+import Testapi from './components/testapi';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Testapi />
   </React.StrictMode>,
   document.getElementById('root')
 );

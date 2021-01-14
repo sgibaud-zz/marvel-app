@@ -9,13 +9,6 @@ import MarvelCard from '../components/marvelCard';
 
 
 
-/* import CSS */
-import "bootstrap/dist/css/bootstrap.min.css";
-import '../index.css';
-import "../css/layout.css";
-
-
-
 class Personnages extends Component {
   state = {
     sideBarOpen: false
@@ -48,7 +41,7 @@ class Personnages extends Component {
           ) : null}
           <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
         </div>
-        <MarvelCard />
+        <MarvelCard cardTitle="Les personnages Marvel"/>
 
         <Footer />
       </Container>
