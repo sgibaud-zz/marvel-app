@@ -1,12 +1,29 @@
 .marvelCatImg {
-  width: 98%;
+  width: inherit;
   border-radius: 0.4rem;
-  opacity: 0.65;
 }
 
-.marvelCatImg:hover {
+.marvelCatComics {
+  width: calc(17.5rem / 1.2);  
+  border-radius: 0.4rem;
+  opacity: 0.45;
+}
+
+/*.marvelCatImg:hover, .marvelCatComics:hover, .overlay:hover {
   box-shadow: 0px 0px 0px 0.125rem #ffffff;
-  transform: scale(1.1);
+  transform: scale(1.05);
+  transition: 0.5s linear !important;
+  opacity: 1;
+}*/
+
+.transition {
+  width: calc(17.5rem / 1.2);
+  border-radius: 0.4rem;
+  opacity: 0.45;
+}
+.transition:hover {
+  box-shadow: 0px 0px 0px 0.125rem #ffffff;
+  transform: scale(1.05);
   transition: 0.5s linear !important;
   opacity: 1;
 }
@@ -18,8 +35,23 @@
 .carouselSlider {
   width: 100%;
   margin-bottom: 2%;
-  margin-right: 5rem;
 }
+
+
+/* titre sur image*/
+.overlay {
+  position: absolute; 
+  bottom: -0.55rem; 
+  background: rgba(236, 29, 36, 0.65);
+  width: inherit;
+  border-radius: 0 0 0.4rem 0.4rem;
+  opacity: 1;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
 
 /* carousel */
 .slick-slider {
@@ -28,7 +60,6 @@
 }
 .slick-list {
   padding: 0 0 0 1rem;
-  width: 100%;
   margin-left: 0;
 }
 
@@ -71,11 +102,12 @@
 }
 
 .slick-slide {
-  padding: 0.5rem 0.25rem !important;
+  padding: 1rem 0.25rem !important;
 }
 
 .slick-slide, .slick-active {
   display: block;
+  width: 17.5rem;
 }
 
 /* traitement H3 */
@@ -84,16 +116,16 @@
   font-size: 1.3rem;
 }
 
-.col {
+/*.col {
   margin:0.05rem 0.25rem;
   padding:0;
-}
+}*/
 
 /* media Query */
 
 @media only screen and (max-width: 576px) {
   .marvelCatImg {
-    width: 80%;
+    height: 30%;
   }
 
   .slick-slide {

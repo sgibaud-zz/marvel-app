@@ -6,12 +6,18 @@ import BackDrop from "../components/BackDrop";
 import Container from 'react-bootstrap/Container';
 import Footer from '../components/footer';
 import MarvelCard from '../components/marvelCard';
+import MarvelModal from '../components/modal';
+
+
+
 
 
 
 class Personnages extends Component {
   state = {
-    sideBarOpen: false
+    sideBarOpen: false,
+    openModal: false,
+    characterId:null
   };
 
   handleOpen = () => {
@@ -25,6 +31,11 @@ class Personnages extends Component {
       sideBarOpen: false
     });
   };
+
+openModalWithId(id){
+  this.setState({openModal:true, characterId:id})
+}
+
 
 
   render() {
@@ -41,8 +52,9 @@ class Personnages extends Component {
           ) : null}
           <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
         </div>
-        <MarvelCard cardTitle="Les personnages Marvel"/>
+        <MarvelCard cardTitle="Les personnages Marvel" onClickCard={(id)=> this.openModalWithId(id)}/>
 
+        <MarvelModal openModal={this.state.openModal} characterId={this.state.characterId}/>
         <Footer />
       </Container>
 

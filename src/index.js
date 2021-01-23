@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-import Testapi from './components/testapi';
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Testapi />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById('root')
 );

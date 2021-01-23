@@ -31,3 +31,6 @@ package.json
 
 # key api
 .env
+
+# dossier ignoré
+/src/components/brouillon
