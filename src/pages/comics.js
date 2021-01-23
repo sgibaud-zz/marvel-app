@@ -9,7 +9,7 @@ import MarvelCard from '../components/marvelCard';
 
 
 
-class Créateurs extends Component {
+class Comics extends Component {
   state = {
     sideBarOpen: false
   };
@@ -41,7 +41,7 @@ class Créateurs extends Component {
           ) : null}
           <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
         </div>
-        <MarvelCard cardTitle="Les créateurs Marvel" />
+        <MarvelCard cardTitle="Les comics Marvel" />
 
         <Footer />
       </Container>
@@ -50,4 +50,4 @@ class Créateurs extends Component {
   }
 }
 
-export default Créateurs;
+export default Comics;
