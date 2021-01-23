@@ -31,3 +31,6 @@ package.json
 
 # key api
 .env
+
+# brouillon
+/src/components/brouillon

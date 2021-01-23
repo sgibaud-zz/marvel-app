@@ -7,12 +7,14 @@ import HeroCarousel from "../components/HeroCarousel";
 import ImageSlider from '../components/marvelCat';
 import Container from 'react-bootstrap/Container';
 import Footer from '../components/footer';
+import Modal from '../components/modal';
 
 /* import CSS */
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../index.css';
 import "../css/layout.css";
 import '../css/sliderCarousel.css';
+
 
 
 
@@ -50,6 +52,7 @@ class Home extends Component {
         <HeroCarousel />
         <ImageSlider categorieTitle="Les personnages" />
         <ImageSlider categorieTitle="Les créateurs" />
+        <Modal />
         <Footer />
       </Container>
 

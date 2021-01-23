@@ -13,7 +13,7 @@ const NavBar = ({ open }) => {
       <div className="nav-items">
         <input id="searchBar" type="text" placeholder="Rechercher"></input>
         <div className="links">
-          <Link to="/home">Accueil</Link>
+          <Link to="/">Accueil</Link>
           <Link to="/personnages">Personnages</Link>
           <Link to="/createurs">Créateurs</Link>
         </div>

@@ -4,7 +4,7 @@ import Personnages from "./pages/personnage";
 import Créateurs from "./pages/createur";
 
 /* import Router */
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 
 
 
@@ -14,11 +14,11 @@ class App extends Component {
     return (
       <div>
 
-        <Router>
-          <Route path="/home" component={Home} />
-          <Route path="/personnages" exact component={Personnages} />
-          <Route path="/createurs" exact component={Créateurs} />
-        </Router>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/personnages"  component={Personnages} />
+          <Route path="/createurs"  component={Créateurs} />
+        </Switch>
 
       </div>
     );
