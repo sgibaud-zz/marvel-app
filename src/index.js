@@ -4,11 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 import App from './App';
-<<<<<<< HEAD
 
-=======
-import { BrowserRouter } from 'react-router-dom';
->>>>>>> f56a478e0c6c335465c247be899d51437b6704f8
 
 
 

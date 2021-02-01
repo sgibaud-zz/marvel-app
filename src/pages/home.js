@@ -8,12 +8,8 @@ import SliderCharacter from '../components/slideCharacter';
 import SliderComics from '../components/slideComics';
 import Container from 'react-bootstrap/Container';
 import Footer from '../components/footer';
-<<<<<<< HEAD
-import Modal from '../components/modal';
-=======
-import MarvelModal from '../components/modal';
-import ModalComic from '../components/modalComic';
->>>>>>> f56a478e0c6c335465c247be899d51437b6704f8
+//import MarvelModal from '../components/modal';
+//import ModalComic from '../components/modalComic';
 
 /* import CSS */
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -105,10 +101,6 @@ class Home extends Component {
         </div>
 
         <HeroCarousel />
-<<<<<<< HEAD
-        <SliderCharacter categorieTitle="Les personnages" />
-        <SliderComics categorieTitle="Les comics" />
-=======
 
 
         <SliderCharacter categorieTitle="Les personnages"
@@ -125,7 +117,6 @@ class Home extends Component {
 
 
 
->>>>>>> f56a478e0c6c335465c247be899d51437b6704f8
         <Footer />
       </Container>
     );

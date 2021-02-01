@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import md5 from 'md5';
 import Slider from 'react-slick';
 import { Container, Row, Col } from 'react-bootstrap';
-<<<<<<< HEAD
-=======
 import MarvelModal from './modal';
->>>>>>> f56a478e0c6c335465c247be899d51437b6704f8
 
 // import CSS
 import "slick-carousel/slick/slick.css";
@@ -38,8 +35,6 @@ export default class SliderCharacter extends Component {
             .then(data => this.setState({ images: data.data.results }));
     }
 
-<<<<<<< HEAD
-=======
     clickCard(id, name, thumbnail, description) {
         this.setState({ openModalCharacter: true, characterId: id, heroName: name, characterImg: thumbnail.path + '.' + thumbnail.extension, description: description });
         //this.props.onClickCard(id, name, thumbnail, description);
@@ -50,7 +45,6 @@ export default class SliderCharacter extends Component {
     }
 
     //<ModalMarvel />
->>>>>>> f56a478e0c6c335465c247be899d51437b6704f8
 
     render() {
         const settings = {
@@ -99,10 +93,6 @@ export default class SliderCharacter extends Component {
 
         // pour ne pas afficher les heros sans vignette
         const noImage = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available';
-<<<<<<< HEAD
-        //const noDescription = '';
-=======
->>>>>>> f56a478e0c6c335465c247be899d51437b6704f8
 
         return (
 
@@ -114,31 +104,16 @@ export default class SliderCharacter extends Component {
                     <Slider {...settings}>
                         {
                             this.state.images
-<<<<<<< HEAD
-                                .filter(image =>
-                                    image.thumbnail.path !== noImage && image.description !== '')
-                                .map(({ id, thumbnail, name }, i) => (
-                                    <Col key={i} id={id}>
-=======
                                 .filter(image => image.thumbnail.path !== noImage && image.description !== '')
                                 .map(({ id, thumbnail, name, description }, i) => (
                                     <Col key={i} id={id} description={description}
                                         onClick={() => this.clickCard(id, name, thumbnail, description)}>
->>>>>>> f56a478e0c6c335465c247be899d51437b6704f8
                                         <div className='transition'>
                                             <img src={`${thumbnail.path}.${thumbnail.extension}`}
                                                 alt={name}
                                                 className='marvelCatImg' />
                                             <h4 className='overlay'>{name}</h4>
                                         </div>
-<<<<<<< HEAD
-
-                                    </Col>
-                                ))}
-
-                    </Slider>
-
-=======
                                     </Col>
                                 ))}
                     </Slider>
@@ -152,7 +127,6 @@ export default class SliderCharacter extends Component {
                         description={this.state.description}
                     />
 
->>>>>>> f56a478e0c6c335465c247be899d51437b6704f8
                 </Row>
             </Container>
         );
