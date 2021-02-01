@@ -17,7 +17,10 @@ class Personnages extends Component {
   state = {
     sideBarOpen: false,
     openModal: false,
-    characterId:null
+    characterId: null,
+    heroName: null,
+    characterImg:null,
+    description:null,
   };
 
   handleOpen = () => {
@@ -32,10 +35,13 @@ class Personnages extends Component {
     });
   };
 
-openModalWithId(id){
-  alert(id);
-  this.setState({openModal:true, characterId:id})
-}
+  openModalWithId(id, name, thumbnail, description) {
+    this.setState({ openModal: true, characterId: id, heroName: name, characterImg:thumbnail, description:description })
+  }
+
+  closeModal = () => {
+    this.setState({ openModal: false })
+  }
 
 
 
@@ -53,9 +59,16 @@ openModalWithId(id){
           ) : null}
           <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
         </div>
-        <MarvelCard cardTitle="Les personnages Marvel" onClickCard={(id)=> this.openModalWithId(id)}/>
+        <MarvelCard cardTitle="Les personnages Marvel" onClickCard={(id, name, thumbnail, description) => this.openModalWithId(id, name, thumbnail, description)} />
 
-        <MarvelModal openModal={this.state.openModal} characterId={this.state.characterId}/>
+        <MarvelModal 
+          openModal={this.state.openModal}
+          closeModal={this.closeModal}
+          characterId={this.state.characterId}
+          heroName={this.state.heroName}
+          characterImg={this.state.thumbnail}
+          description={this.state.description}
+         />
         <Footer />
       </Container>
 

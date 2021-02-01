@@ -32,5 +32,8 @@ package.json
 # key api
 .env
 
-# brouillon
+# dossier ignoré
 /src/components/brouillon
+
+#eslintcache
+.eslintcache
