@@ -12,6 +12,7 @@
   height: 2.4rem;
   align-self: center;
   padding: 0;
+  margin-bottom: 0.5rem;
 }
 
 
@@ -20,7 +21,13 @@
   width: calc(17.5rem / 1.2);
 }
 
+<<<<<<< HEAD
 
+=======
+#footerMargin {
+  margin: 2rem 0;
+}
+>>>>>>> f56a478e0c6c335465c247be899d51437b6704f8
 
 
 /* gestion des liens dans le Col du footer */
@@ -28,9 +35,9 @@
   display: inline-flex;
   justify-content: center;
   white-space: normal;
-  padding: 0.15rem;
+  padding: 0.05rem;
   color: #8197a4;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   list-style: none;
 }
 

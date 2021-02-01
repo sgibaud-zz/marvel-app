@@ -8,6 +8,7 @@ import ModalFooter from 'react-bootstrap/ModalFooter';
 
 
 
+<<<<<<< HEAD
 //CSS
 import "../css/marvelCard.css";
 
@@ -22,9 +23,35 @@ class MarvelModal extends React.Component {
     this.state = {
         images: [],
     }
+=======
 
+class MarvelModal extends React.Component {
+
+
+  render() {
+    return (
+      <Modal show={this.props.openModalCharacter}  >
+
+        <ModalHeader id={this.props.characterId} >
+          <ModalTitle >{this.props.heroName}</ModalTitle>
+        </ModalHeader>
+
+        <ModalBody>
+          <img id="imgModal" src={this.props.characterImg} alt={this.props.heroName} />        
+            <p id="modalText">{this.props.description}</p>         
+        </ModalBody >
+
+        <ModalFooter className="modalFooter">
+          <button className="btn" onClick={this.props.closeModalCharacter} >Close</button>
+        </ModalFooter>
+>>>>>>> f56a478e0c6c335465c247be899d51437b6704f8
+
+      </Modal>
+    );
+  }
 }
 
+<<<<<<< HEAD
   componentDidMount() {
     const timestamp = Number(Date.now());
     const API_PUBLIC_KEY = process.env.REACT_APP_MARVEL_API_PUBLIC_KEY;
@@ -88,3 +115,6 @@ class MarvelModal extends React.Component {
 }
 
 export default MarvelModal;
+=======
+export default MarvelModal;
+>>>>>>> f56a478e0c6c335465c247be899d51437b6704f8

@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 //import Fetch from './md5Fetch';
 import md5 from 'md5';
 import Slider from 'react-slick';
 import { Container, Row, Col } from 'react-bootstrap';
+=======
+
+import Slider from 'react-slick';
+import { Container, Row, Col } from 'react-bootstrap';
+import ModalComic from './modalComic';
+
+//import Fetch from './md5Fetch';
+import md5 from 'md5';
+
+>>>>>>> f56a478e0c6c335465c247be899d51437b6704f8
 
 // import CSS
 import "slick-carousel/slick/slick.css";
@@ -13,11 +24,18 @@ export default class SliderComics extends Component {
     constructor(props) {
         super(props);
         this.state = {
+<<<<<<< HEAD
             images: []
         }
     }
 
 
+=======
+            comics: []
+        }
+    }
+
+>>>>>>> f56a478e0c6c335465c247be899d51437b6704f8
     // appel du fetch avec gestion TS
     componentDidMount() {
         //gestion du timestamp avec le hash de la clé pour l'appel de l'api
@@ -29,9 +47,25 @@ export default class SliderComics extends Component {
         // appel du fetch 
         fetch(`https://gateway.marvel.com/v1/public/comics?format=comic&hasDigitalIssue=false&ts=${timestamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
             .then(resp => resp.json())
+<<<<<<< HEAD
             .then(data => this.setState({ images: data.data.results }));
     }
 
+=======
+            .then(data => this.setState({ comics: data.data.results }));
+    }
+
+    clickComic(id, thumbnail, title) {
+        this.setState({ openModalComic: true, comicId: id, title: title, comicImg: thumbnail.path + '.' + thumbnail.extension });
+        //this.props.onClickComic(id, digitalId, thumbnail, title);
+    }
+
+
+    closeModalComic = () => {
+        this.setState({ openModalComic: false });
+    }
+    //<ModalComic />
+>>>>>>> f56a478e0c6c335465c247be899d51437b6704f8
 
     render() {
         const settings = {
@@ -90,6 +124,7 @@ export default class SliderComics extends Component {
 
                     <Slider {...settings}>
                         {
+<<<<<<< HEAD
                             this.state.images
                                 .filter(image => image.thumbnail.path !== noImage)
                                 .map(({ id, thumbnail, name }, i) => (
@@ -105,6 +140,29 @@ export default class SliderComics extends Component {
                     </Slider>
 
                 </Row>
+=======
+                            this.state.comics
+                                .filter(image => image.thumbnail.path !== noImage)
+                                .map(({ id, digitalId, thumbnail, title }, i) => (
+                                    <Col key={i} id={id} digitalId={digitalId}
+                                        onClick={() => this.clickComic(id, thumbnail, title)}>
+                                        <div className='transitionComic'>
+                                            <img src={`${thumbnail.path}.${thumbnail.extension}`}
+                                                alt={title} className='marvelCatComics' />
+                                        </div>
+                                    </Col>
+                                ))}
+                    </Slider>
+                </Row>
+
+                <ModalComic
+                    openModalComic={this.state.openModalComic}
+                    closeModalComic={this.closeModalComic}
+                    comicId={this.state.comicId}
+                    title={this.state.title}
+                    comicImg={this.state.comicImg}
+                />
+>>>>>>> f56a478e0c6c335465c247be899d51437b6704f8
             </Container>
         );
     }
