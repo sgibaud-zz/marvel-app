@@ -9,15 +9,14 @@ import MarvelCard from '../components/marvelCard';
 import MarvelModal from '../components/modal';
 
 
-
-
-
-
 class Personnages extends Component {
   state = {
-    sideBarOpen: false,
-    openModal: false,
-    characterId:null
+    //sideBarOpen: false,
+    //openModal: false,
+    //characterId: '',
+    //heroName: '',
+    //characterImg: {},
+    //description: ''
   };
 
   handleOpen = () => {
@@ -32,17 +31,18 @@ class Personnages extends Component {
     });
   };
 
-openModalWithId(id){
-  this.setState({openModal:true, characterId:id})
-}
+  openModalWithId(id, name, thumbnail, description) {
+    this.setState({ openModalCharacter: true, characterId: id, heroName: name, characterImg: thumbnail, description: description });
+  }
 
+  closeModalCharacter = () => {
+    this.setState({ openModalCharacter: false });
+  }
 
 
   render() {
     return (
       <Container>
-
-
         <div>
           <NavBar open={this.handleOpen} />
           {this.state.sideBarOpen ? (
@@ -52,12 +52,21 @@ openModalWithId(id){
           ) : null}
           <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
         </div>
-        <MarvelCard cardTitle="Les personnages Marvel" onClickCard={(id)=> this.openModalWithId(id)}/>
 
-        <MarvelModal openModal={this.state.openModal} characterId={this.state.characterId}/>
+        <MarvelCard cardTitle="Les personnages Marvel"
+          onClickCard={(id, name, thumbnail, description) => this.openModalWithId(id, name, thumbnail.path + '.' + thumbnail.extension, description)} />
+
+        <MarvelModal
+          openModalCharacter={this.state.openModalCharacter}
+          closeModalCharacter={this.closeModalCharacter}
+          characterId={this.state.characterId}
+          heroName={this.state.heroName}
+          characterImg={this.state.characterImg}
+          description={this.state.description}
+        />
+
         <Footer />
       </Container>
-
     );
   }
 }

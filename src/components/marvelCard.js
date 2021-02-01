@@ -13,7 +13,8 @@ class MarvelCard extends React.Component {
         super(props);
 
         this.state = {
-            images: [],
+            character: []
+
         }
 
     }
@@ -27,18 +28,20 @@ class MarvelCard extends React.Component {
 
         fetch(`https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}&limit=100`)
             .then(resp => resp.json())
-            .then(data => this.setState({ images: data.data.results }));
-        console.log(this.state.searchHero)
+            //.then(data => console.log({ images: data.data.results }))
+            .then(data => this.setState({ character: data.data.results }));
     }
 
-    clickCard(id) {
-        this.props.onClickCard(id);
+
+    clickCard(id, name, thumbnail, description) {
+        this.props.onClickCard(id, name, thumbnail, description);
     }
 
     render() {
 
         const noImage = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available';
-        // const noGif = 'http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708.gif';
+        const noGif = 'http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708';
+
 
         return (
             <Container>
@@ -49,16 +52,18 @@ class MarvelCard extends React.Component {
                         <div className="cardContainer">
 
                             {
-                                this.state.images
-                                    .filter(image => image.thumbnail.path !== noImage)
-                                    .map(({ id, thumbnail, name }, i) => (
-                                        <picture key={i} id={id} onClick={() => this.clickCard(id)}  >
+                                this.state.character
+                                    .filter(image => image.thumbnail.path !== noImage && image.thumbnail.path !== noGif)
+                                    .map(({ id, thumbnail, name, description }, i) => (
+                                       <picture key={i} id={id} description={description} 
+                                       onClick={() => this.clickCard(id,name, thumbnail, description)}  >
                                             <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} className='heroesCard' />
                                         </picture>
                                     ))}
 
                         </div>
                     </div>
+
                     <Modal />
                 </div>
 
