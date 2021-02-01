@@ -34,3 +34,6 @@ package.json
 
 # dossier ignoré
 /src/components/brouillon
+
+#eslintcache
+.eslintcache

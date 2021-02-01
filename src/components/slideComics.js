@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-//import Fetch from './md5Fetch';
-import md5 from 'md5';
+
 import Slider from 'react-slick';
 import { Container, Row, Col } from 'react-bootstrap';
+import ModalComic from './modalComic';
+
+//import Fetch from './md5Fetch';
+import md5 from 'md5';
+
 
 // import CSS
 import "slick-carousel/slick/slick.css";
@@ -13,10 +17,9 @@ export default class SliderComics extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            images: []
+            comics: []
         }
     }
-
 
     // appel du fetch avec gestion TS
     componentDidMount() {
@@ -29,9 +32,19 @@ export default class SliderComics extends Component {
         // appel du fetch 
         fetch(`https://gateway.marvel.com/v1/public/comics?format=comic&hasDigitalIssue=false&ts=${timestamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
             .then(resp => resp.json())
-            .then(data => this.setState({ images: data.data.results }));
+            .then(data => this.setState({ comics: data.data.results }));
     }
 
+    clickComic(id, thumbnail, title) {
+        this.setState({ openModalComic: true, comicId: id, title: title, comicImg: thumbnail.path + '.' + thumbnail.extension });
+        //this.props.onClickComic(id, digitalId, thumbnail, title);
+    }
+
+
+    closeModalComic = () => {
+        this.setState({ openModalComic: false });
+    }
+    //<ModalComic />
 
     render() {
         const settings = {
@@ -90,21 +103,27 @@ export default class SliderComics extends Component {
 
                     <Slider {...settings}>
                         {
-                            this.state.images
+                            this.state.comics
                                 .filter(image => image.thumbnail.path !== noImage)
-                                .map(({ id, thumbnail, name }, i) => (
-                                    <Col key={i} id={id}>
-
-                                        <div className='transition'>
+                                .map(({ id, digitalId, thumbnail, title }, i) => (
+                                    <Col key={i} id={id} digitalId={digitalId}
+                                        onClick={() => this.clickComic(id, thumbnail, title)}>
+                                        <div className='transitionComic'>
                                             <img src={`${thumbnail.path}.${thumbnail.extension}`}
-                                                alt={name} className='marvelCatComics' />
+                                                alt={title} className='marvelCatComics' />
                                         </div>
-
                                     </Col>
                                 ))}
                     </Slider>
-
                 </Row>
+
+                <ModalComic
+                    openModalComic={this.state.openModalComic}
+                    closeModalComic={this.closeModalComic}
+                    comicId={this.state.comicId}
+                    title={this.state.title}
+                    comicImg={this.state.comicImg}
+                />
             </Container>
         );
     }

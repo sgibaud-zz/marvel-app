@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import md5 from 'md5';
 import Slider from 'react-slick';
 import { Container, Row, Col } from 'react-bootstrap';
+import MarvelModal from './modal';
 
 // import CSS
 import "slick-carousel/slick/slick.css";
@@ -34,6 +35,16 @@ export default class SliderCharacter extends Component {
             .then(data => this.setState({ images: data.data.results }));
     }
 
+    clickCard(id, name, thumbnail, description) {
+        this.setState({ openModalCharacter: true, characterId: id, heroName: name, characterImg: thumbnail.path + '.' + thumbnail.extension, description: description });
+        //this.props.onClickCard(id, name, thumbnail, description);
+    }
+
+    closeModalCharacter = () => {
+        this.setState({ openModalCharacter: false });
+    }
+
+    //<ModalMarvel />
 
     render() {
         const settings = {
@@ -82,7 +93,6 @@ export default class SliderCharacter extends Component {
 
         // pour ne pas afficher les heros sans vignette
         const noImage = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available';
-        //const noDescription = '';
 
         return (
 
@@ -94,21 +104,28 @@ export default class SliderCharacter extends Component {
                     <Slider {...settings}>
                         {
                             this.state.images
-                                .filter(image =>
-                                    image.thumbnail.path !== noImage && image.description !== '')
-                                .map(({ id, thumbnail, name }, i) => (
-                                    <Col key={i} id={id}>
+                                .filter(image => image.thumbnail.path !== noImage && image.description !== '')
+                                .map(({ id, thumbnail, name, description }, i) => (
+                                    <Col key={i} id={id} description={description}
+                                        onClick={() => this.clickCard(id, name, thumbnail, description)}>
                                         <div className='transition'>
                                             <img src={`${thumbnail.path}.${thumbnail.extension}`}
                                                 alt={name}
                                                 className='marvelCatImg' />
                                             <h4 className='overlay'>{name}</h4>
                                         </div>
-
                                     </Col>
                                 ))}
-
                     </Slider>
+
+                    <MarvelModal
+                        openModalCharacter={this.state.openModalCharacter}
+                        closeModalCharacter={this.closeModalCharacter}
+                        characterId={this.state.characterId}
+                        heroName={this.state.heroName}
+                        characterImg={this.state.characterImg}
+                        description={this.state.description}
+                    />
 
                 </Row>
             </Container>
