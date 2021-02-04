@@ -6,12 +6,12 @@ import md5 from 'md5';
 import '../css/sliderCarousel.css'
 
 
-class MarvelCard extends React.Component {
+class ComicsCard extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            character: []
+            comics: []
 
         }
 
@@ -24,10 +24,10 @@ class MarvelCard extends React.Component {
 
         const hash = md5(timestamp + API_PRIVATE_KEY + API_PUBLIC_KEY);
 
-        fetch(`https://gateway.marvel.com/v1/public/characters?orderBy=-modified&ts=${timestamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}&limit=75`)
+        fetch(`https://gateway.marvel.com/v1/public/comics?format=comic&hasDigitalIssue=false&ts=${timestamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
             .then(resp => resp.json())
             //.then(data => console.log({ images: data.data.results }))
-            .then(data => this.setState({ character: data.data.results }));
+            .then(data => this.setState({ comics: data.data.results }));
     }
 
 
@@ -49,14 +49,13 @@ class MarvelCard extends React.Component {
                         <div className="cardContainer">
 
                             {
-                                this.state.character
+                                this.state.comics
                                     .filter(image => image.thumbnail.path !== noImage && image.thumbnail.path !== noGif && image.description !== '')
                                     .map(({ id, thumbnail, name, description }, i) => (
                                         
                                             <picture className='transitionCharacter' key={i} id={id} description={description}
                                                 onClick={() => this.clickCard(id, name, thumbnail, description)}  >
                                                 <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} className='heroesCard' />
-                                                <h4 className='overlayCharacter titleName'>{name}</h4>
                                             </picture>
                                         
                                     ))}
@@ -76,4 +75,4 @@ class MarvelCard extends React.Component {
 
 
 
-export default MarvelCard;
+export default ComicsCard;

@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
+import Container from 'react-bootstrap/Container';
 
+//component Marvel
 import NavBar from "../components/NavBar";
 import SideNavBar from "../components/SideNavBar";
 import BackDrop from "../components/BackDrop";
-import Container from 'react-bootstrap/Container';
 import Footer from '../components/footer';
 import MarvelCard from '../components/marvelCard';
 import MarvelModal from '../components/modal';
 
 
+//Import CSS
+import '../css/sliderCarousel.css';
+
 class Personnages extends Component {
-  state = {
-    //sideBarOpen: false,
-    //openModal: false,
-    //characterId: '',
-    //heroName: '',
-    //characterImg: {},
-    //description: ''
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      sideBarOpen: false,
+    };
+  }
+
 
   handleOpen = () => {
     this.setState({
@@ -65,15 +68,8 @@ class Personnages extends Component {
           description={this.state.description}
         />
 
-        <MarvelModal 
-          openModal={this.state.openModal}
-          closeModal={this.closeModal}
-          characterId={this.state.characterId}
-          heroName={this.state.heroName}
-          characterImg={this.state.thumbnail}
-          description={this.state.description}
-         />
         <Footer />
+
       </Container>
     );
   }

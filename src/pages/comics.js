@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
+import Container from 'react-bootstrap/Container';
 
+//component Marvel
 import NavBar from "../components/NavBar";
 import SideNavBar from "../components/SideNavBar";
 import BackDrop from "../components/BackDrop";
-import Container from 'react-bootstrap/Container';
 import Footer from '../components/footer';
-import MarvelCard from '../components/marvelCard';
-
+import ComicsCard from '../components/comicsCard';
+import ModalComic from '../components/modalComic';
 
 
 class Comics extends Component {
-  state = {
-    sideBarOpen: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      sideBarOpen: false
+    };
+  }
 
   handleOpen = () => {
     this.setState({
@@ -25,6 +29,16 @@ class Comics extends Component {
       sideBarOpen: false
     });
   };
+
+
+  clickComic(id, title, thumbnail) {
+    this.setState({ openModalComic: true, comicId: id, title: title, comicImg: thumbnail});
+  }
+
+
+  closeModalComic = () => {
+    this.setState({ openModalComic: false });
+  }
 
 
   render() {
@@ -41,7 +55,17 @@ class Comics extends Component {
           ) : null}
           <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
         </div>
-        <MarvelCard cardTitle="Les comics Marvel" />
+
+        <ComicsCard cardTitle="Les comics Marvel"
+          onClickCard={(id, title, thumbnail) => this.clickComic(id, title, thumbnail.path + '.' + thumbnail.extension)} />
+
+        <ModalComic
+          openModalComic={this.state.openModalComic}
+          closeModalComic={this.closeModalComic}
+          comicId={this.state.comicId}
+          title={this.state.title}
+          comicImg={this.state.comicImg}
+        />
 
         <Footer />
       </Container>

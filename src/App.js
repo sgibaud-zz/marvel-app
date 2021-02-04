@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+//import des pages
 import Home from "./pages/home";
 import Personnages from "./pages/personnage";
 import Comics from './pages/comics';

@@ -105,8 +105,8 @@ export default class SliderComics extends Component {
                         {
                             this.state.comics
                                 .filter(image => image.thumbnail.path !== noImage)
-                                .map(({ id, digitalId, thumbnail, title }, i) => (
-                                    <Col key={i} id={id} digitalId={digitalId}
+                                .map(({ id, thumbnail, title }, i) => (
+                                    <Col key={i} id={id} 
                                         onClick={() => this.clickComic(id, thumbnail, title)}>
                                         <div className='transitionComic'>
                                             <img src={`${thumbnail.path}.${thumbnail.extension}`}
