@@ -15,11 +15,10 @@ const SideNavBar = ({ close, display }) => {
         <div onClick={close}>
           <CloseIcon />
         </div>
-        <input id="searchBarMobile" type="text" placeholder="Rechercher"></input>
         <div className="links">
           <Link to="/">Accueil</Link>
           <Link to="/personnages">Personnages</Link>
-          <Link to="/createurs">Créateurs</Link>
+          <Link to="/comics">Comics</Link>
         </div>
     </nav>
   );

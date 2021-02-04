@@ -17,12 +17,12 @@ export default class SliderComics extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            comics: []
+            comics:[]
         }
     }
 
     // appel du fetch avec gestion TS
-    componentDidMount() {
+    componentDidMount=() => {
         //gestion du timestamp avec le hash de la clé pour l'appel de l'api
         const timestamp = Number(new Date());
         const API_PUBLIC_KEY = process.env.REACT_APP_MARVEL_API_PUBLIC_KEY;
@@ -32,7 +32,7 @@ export default class SliderComics extends Component {
         // appel du fetch 
         fetch(`https://gateway.marvel.com/v1/public/comics?format=comic&hasDigitalIssue=false&ts=${timestamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
             .then(resp => resp.json())
-            .then(data => this.setState({ comics: data.data.results }));
+            .then(data => this.setState({comics:data.data.results}));
     }
 
     clickComic(id, thumbnail, title) {

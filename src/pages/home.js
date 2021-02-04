@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import NavBar from "../components/NavBar";
 import SideNavBar from "../components/SideNavBar";
-import BackDrop from "../components/BackDrop";
 import HeroCarousel from "../components/HeroCarousel";
 import SliderCharacter from '../components/slideCharacter';
 import SliderComics from '../components/slideComics';
@@ -92,11 +91,7 @@ class Home extends Component {
       <Container>
         <div>
           <NavBar open={this.handleOpen} />
-          {this.state.sideBarOpen ? (
-            <div>
-              <BackDrop close={this.handleClose} />{" "}
-            </div>
-          ) : null}
+
           <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
         </div>
 

@@ -11,7 +11,6 @@ const NavBar = ({ open }) => {
       <picture id='logo' className='nav-logo'></picture>
       <div className="nav-space" />
       <div className="nav-items">
-        <input id="searchBar" type="text" placeholder="Rechercher"></input>
         <div className="links">
           <Link to="/">Accueil</Link>
           <Link to="/personnages">Personnages</Link>
