@@ -1,0 +1,118 @@
+{
+    "character": {
+        "allies": [
+            {
+                "id": 10,
+                "name": "Black Panther",
+                "durability": 3,
+                "energy": 1,
+                "fighting skills": 4,
+                "intelligence": 4,
+                "speed": 3,
+                "strength": 4,
+                "image": "http://graphisme.draconic-graphisme.com/marvel/blackpanther.jpg"
+            },
+            {
+                "id": 20,
+                "name": "hulk",
+                "durability": 2,
+                "energy": 1,
+                "fighting skills": 6,
+                "intelligence": 3,
+                "speed": 3,
+                "strength": 2,
+                "image": "http://graphisme.draconic-graphisme.com/marvel/hulk.jpg"
+            },
+            {
+                "id": 30,
+                "name": "Iron Man",
+                "durability": 5,
+                "energy": 6,
+                "fighting skills": 7,
+                "intelligence": 9,
+                "speed": 10,
+                "strength": 1,
+                "image": "http://graphisme.draconic-graphisme.com/marvel/ironman.jpg"
+            },
+            {
+                "id": 40,
+                "name": "Silver Surfer",
+                "durability": 5,
+                "energy": 6,
+                "fighting skills": 7,
+                "intelligence": 9,
+                "speed": 10,
+                "strength": 1,
+                "image": "http://graphisme.draconic-graphisme.com/marvel/silversurfer.jpg"
+            },
+            {
+                "id": 50,
+                "name": "Thor",
+                "durability": 5,
+                "energy": 6,
+                "fighting skills": 7,
+                "intelligence": 9,
+                "speed": 10,
+                "strength": 1,
+                "image": "http://graphisme.draconic-graphisme.com/marvel/thor.jpg"
+            }
+        ],
+        "enemies": [
+            {
+                "id": 60,
+                "name": "Galactus",
+                "durability": 5,
+                "energy": 6,
+                "fighting skills": 7,
+                "intelligence": 9,
+                "speed": 10,
+                "strength": 1,
+                "image": "http://graphisme.draconic-graphisme.com/marvel/galactus.jpg"
+            },
+            {
+                "id": 70,
+                "name": "Loki",
+                "durability": 5,
+                "energy": 6,
+                "fighting skills": 7,
+                "intelligence": 9,
+                "speed": 10,
+                "strength": 1,
+                "image": "http://graphisme.draconic-graphisme.com/marvel/loki.jpg"
+            },
+            {
+                "id": 80,
+                "name": "Thanos",
+                "durability": 5,
+                "energy": 6,
+                "fighting skills": 7,
+                "intelligence": 9,
+                "speed": 10,
+                "strength": 1,
+                "image": "http://graphisme.draconic-graphisme.com/marvel/thanos.jpg"
+            },
+            {
+                "id": 90,
+                "name": "Ultron",
+                "durability": 5,
+                "energy": 6,
+                "fighting skills": 7,
+                "intelligence": 9,
+                "speed": 10,
+                "strength": 1,
+                "image": "http://graphisme.draconic-graphisme.com/marvel/ultron.jpg"
+            },
+            {
+                "id": 100,
+                "name": "Venom",
+                "durability": 5,
+                "energy": 6,
+                "fighting skills": 7,
+                "intelligence": 9,
+                "speed": 10,
+                "strength": 1,
+                "image": "http://graphisme.draconic-graphisme.com/marvel/venom.jpg"
+            }
+        ]
+    }
+}

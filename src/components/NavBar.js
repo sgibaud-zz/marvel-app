@@ -15,6 +15,7 @@ const NavBar = ({ open }) => {
           <Link to="/">Accueil</Link>
           <Link to="/personnages">Personnages</Link>
           <Link to="/comics">Comics</Link>
+          <Link to="/game">Game</Link>
         </div>
       </div>
       <div onClick={open} className="nav-icon">
