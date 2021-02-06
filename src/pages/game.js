@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import Allies from '../components/allies';
 import Enemies from '../components/enemies';
+import Footer from '../components/footer';
+import NavBar from "../components/NavBar";
+import SideNavBar from "../components/SideNavBar";
 
 import '../css/searchBarstyle.css';
+import '../css/sliderCarousel.css';
 
 
 class Game extends Component {
@@ -11,34 +16,64 @@ class Game extends Component {
     super(props);
 
     this.state = {
-      choice1: 'https://thumbs.dreamstime.com/z/super-hero-pink-starfish-cartoon-shape-vector-illustration-143008646.jpg',
-      choice2: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpBe1NPvkc1bGRyj8THt_EjVCEQ7zD0Z_SqA&usqp=CAU"
+      choice1: 'http://graphisme.draconic-graphisme.com/marvel/shadow.jpg',
+      choice2: "http://graphisme.draconic-graphisme.com/marvel/shadow.jpg",
+      sideBarOpen: false,
+    openModal: false
     };
   }
 
-  saveChoice1 (){
-    this.setState({choice1:'http://graphisme.draconic-graphisme.com/marvel/loki.jpg'});
+  saveChoice1 = (image) => {
+    this.setState({ choice1: image });
   }
 
-  saveChoice2 = (m.image) => {
-    this.setState({choice2: m.image});
+  saveChoice2 = (image) => {
+    this.setState({ choice2: image });
     //alert('tests');
   }
+
+  handleOpen = () => {
+    this.setState({
+      sideBarOpen: true
+    });
+  };
+
+  handleClose = () => {
+    this.setState({
+      sideBarOpen: false
+    });
+  };
 
 
   render() {
     return (
       <>
+      <Container>
+        <>
+
         <div>
-          <img id="choice" src={this.state.choice1} alt='' />
-          <button>PLAY</button>
-          <img id="choice" src={this.state.choice2} alt='' />
+          <NavBar open={this.handleOpen} />
+
+          <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
         </div>
+          <Row>
+            <div className='heroCard'>
+              <img className="heroFight" src={this.state.choice1} alt='' />
+              <button className='btn'>PLAY</button>
+              <img className="heroFight" src={this.state.choice2} alt='' />
+            </div>
+          </Row>
 
-        <Allies onClick={this.saveChoice1}/>
-        <br></br>
-        <Enemies saveChoice2={this.saveChoice2(m.image)}/>
+          <h4 className='titleSlider textCenter'>Alliés</h4>
+          <Allies saveChoice1={this.saveChoice1} />
+          
+          <h4 className='titleSlider textCenter'>Ennemis</h4>
+          <Enemies saveChoice2={this.saveChoice2} />
 
+        </>
+      </Container>
+
+      <Footer />
       </>
     )
   }

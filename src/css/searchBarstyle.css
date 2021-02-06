@@ -65,13 +65,13 @@
     height: 200px;
 }
 
-#choiceAllie{
+.choiceAllie{
     border: 1px solid white;
     width: 200px;
     height: 200px;
 }
 
-#choiceenemie{
+.choiceenemie{
     border: 1px solid white;
     width: 200px;
     height: 200px;
