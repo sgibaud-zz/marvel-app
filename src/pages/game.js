@@ -23,12 +23,12 @@ class Game extends Component {
     };
   }
 
-  saveChoice1 = (image) => {
-    this.setState({ choice1: image });
+  saveChoice1 = () => {
+    this.setState({ choice1:  });
   }
 
-  saveChoice2 = (image) => {
-    this.setState({ choice2: image });
+  saveChoice2 = () => {
+    this.setState({ choice2:  });
     //alert('tests');
   }
 
