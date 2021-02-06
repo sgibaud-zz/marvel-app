@@ -12,7 +12,7 @@ function Footer() {
     return (
         <footer id='footerMargin'>
             <Container>
-                <picture id='logo'></picture>
+                <picture className='logo logoResponsive'></picture>
                 <Row lg={8} xs={12}>
                     <Col className='footerCol' lg={2} xs={12}><a href='#'>Conditions d'utilisation</a></Col>
                     <Col className='footerCol' lg={2} xs={12}><a href='#'>Donnez-nous votre avis</a></Col>

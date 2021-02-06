@@ -22,7 +22,6 @@ code {
 
 
 /* css marvel app */
-
 .container {
   display: flex;
   flex-direction: column;
@@ -45,6 +44,6 @@ h3 {
   font-weight: 700;
 }
 
-a {
+a, *:hover {
   cursor: pointer;
 }

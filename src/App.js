@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+//import des pages
 import Home from "./pages/home";
 import Personnages from "./pages/personnage";
 import Comics from './pages/comics';
@@ -19,8 +21,6 @@ class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/personnages" component={Personnages} />
           <Route path='/comics' component={Comics} />
-          <Route path='/detailsCharacter' component={DetailsCharacter} />
-          <Route path='/detailsComics' component={DetailsComics} />          
         </Switch>
       </div>
     );

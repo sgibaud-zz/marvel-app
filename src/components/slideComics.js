@@ -17,12 +17,12 @@ export default class SliderComics extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            comics: []
+            comics:[]
         }
     }
 
     // appel du fetch avec gestion TS
-    componentDidMount() {
+    componentDidMount=() => {
         //gestion du timestamp avec le hash de la clé pour l'appel de l'api
         const timestamp = Number(new Date());
         const API_PUBLIC_KEY = process.env.REACT_APP_MARVEL_API_PUBLIC_KEY;
@@ -32,7 +32,7 @@ export default class SliderComics extends Component {
         // appel du fetch 
         fetch(`https://gateway.marvel.com/v1/public/comics?format=comic&hasDigitalIssue=false&ts=${timestamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
             .then(resp => resp.json())
-            .then(data => this.setState({ comics: data.data.results }));
+            .then(data => this.setState({comics:data.data.results}));
     }
 
     clickComic(id, thumbnail, title) {
@@ -105,8 +105,8 @@ export default class SliderComics extends Component {
                         {
                             this.state.comics
                                 .filter(image => image.thumbnail.path !== noImage)
-                                .map(({ id, digitalId, thumbnail, title }, i) => (
-                                    <Col key={i} id={id} digitalId={digitalId}
+                                .map(({ id, thumbnail, title }, i) => (
+                                    <Col key={i} id={id} 
                                         onClick={() => this.clickComic(id, thumbnail, title)}>
                                         <div className='transitionComic'>
                                             <img src={`${thumbnail.path}.${thumbnail.extension}`}
