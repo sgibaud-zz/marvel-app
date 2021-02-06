@@ -33,7 +33,7 @@ class Allies extends Component {
               this.state.allies.map((m, i) =>
                 <>
                   <img className="transitionGame" id={m.id}
-                    onClick={() => this.props.saveChoice1(m.image)} src={m.image}
+                    onClick={() => this.props.saveChoice1()} src={m.image}
                     key={i} alt='' />
                   <p>{m.strength}</p>
                   <p>{m.energy}</p>
