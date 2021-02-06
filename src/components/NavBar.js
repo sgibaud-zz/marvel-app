@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 const NavBar = ({ open }) => {
   return (
     <nav className="nav-bar">
-      <picture id='logo' className='nav-logo'></picture>
+      <picture className='nav-logo logo'></picture>
       <div className="nav-space" />
       <div className="nav-items">
         <div className="links">

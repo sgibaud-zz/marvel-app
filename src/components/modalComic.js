@@ -14,7 +14,7 @@ class ModalComic extends React.Component {
     return (
       <Modal show={this.props.openModalComic}  >
 
-        <ModalHeader id={this.props.comicDigital} >
+        <ModalHeader id={this.props.comicId} >
           <ModalTitle >{this.props.title}</ModalTitle>
         </ModalHeader>
 

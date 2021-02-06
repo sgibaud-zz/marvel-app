@@ -1,23 +1,30 @@
 import React, { Component } from 'react';
+import Container from 'react-bootstrap/Container';
 
+//component Marvel
 import NavBar from "../components/NavBar";
 import SideNavBar from "../components/SideNavBar";
 import BackDrop from "../components/BackDrop";
-import Container from 'react-bootstrap/Container';
 import Footer from '../components/footer';
-import MarvelCard from '../components/marvelCard';
+import ComicsCard from '../components/comicsCard';
+import ModalComic from '../components/modalComic';
 import SearchComic from '../components/searchComic';
 import md5 from 'md5';
 
-
+//Import CSS
+import '../css/sliderCarousel.css';
+import '../css/searchBarstyle.css';
 
 
 class Comics extends Component {
-  state = {
-    sideBarOpen: false,
-    researchResult:null,
-    isContentshow:true
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      sideBarOpen: false,
+      researchResult:null,
+      isContentshow:true
+    };
+  }
 
   handleSearch = (inputText) => {
     const timestamp = Number(new Date());
@@ -36,9 +43,6 @@ class Comics extends Component {
     this.setState({isContentshow:false});
   }
 
-
-
-
   handleOpen = () => {
     this.setState({
       sideBarOpen: true
@@ -51,8 +55,24 @@ class Comics extends Component {
     });
   };
 
+  clickComic(id, title, thumbnail) {
+    this.setState({ openModalComic: true, comicId: id, title: title, comicImg: thumbnail});
+  }
+
+  closeModalComic = () => {
+    this.setState({ openModalComic: false });
+  }
+
+  clickCard(id, title, thumbnail, description) {
+    this.clickComic(id, title, thumbnail.path + '.' + thumbnail.extension, description);
+  }
+
 
   render() {
+
+    const noImage = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available';
+    const noGif = 'http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708';
+
     return (
       <Container>
 
@@ -68,6 +88,7 @@ class Comics extends Component {
         </div>
 
 
+
         <SearchComic
         handleSearch={this.handleSearch}/>
 
@@ -75,9 +96,11 @@ class Comics extends Component {
         {
           this.state.researchResult != null &&
           this.state.researchResult
+            .filter(image => image.thumbnail.path !== noImage && image.thumbnail.path !== noGif && image.description !== '')
             .map(({id, thumbnail, title}, i) => (
-              <picture key={i} id={id}>
-                   <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={title} className='heroesCard' />
+              <picture className='transitionCharacter' key={i} id={id}
+              onClick={() => this.clickCard(id, title, thumbnail)} >
+                <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={title} className='heroesCard' />
                </picture>                       
             ))
         }
@@ -90,9 +113,18 @@ class Comics extends Component {
 
         {
           this.state.isContentshow == true &&
-          <MarvelCard cardTitle="Les comics Marvel"
-            onClickCard={(id, name, thumbnail, description) => this.openModalWithId(id, name, thumbnail.path + '.' + thumbnail.extension, description)} />
+          <ComicsCard cardTitle="Les comics Marvel"
+          onClickCard={(id, title, thumbnail) => this.clickComic(id, title, thumbnail.path + '.' + thumbnail.extension)} />
         }
+
+
+        <ModalComic
+          openModalComic={this.state.openModalComic}
+          closeModalComic={this.closeModalComic}
+          comicId={this.state.comicId}
+          title={this.state.title}
+          comicImg={this.state.comicImg}
+        />
 
         <Footer />
       </Container>

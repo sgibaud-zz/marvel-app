@@ -1,29 +1,31 @@
 import React, { Component } from 'react';
+import Container from 'react-bootstrap/Container';
 
+//component Marvel
 import NavBar from "../components/NavBar";
 import SideNavBar from "../components/SideNavBar";
 import BackDrop from "../components/BackDrop";
-import Container from 'react-bootstrap/Container';
 import Footer from '../components/footer';
 import MarvelCard from '../components/marvelCard';
 import MarvelModal from '../components/modal';
 import SearchCharacter from '../components/SearchCharacter';
 import md5 from 'md5';
 
-
+//Import CSS
+import '../css/sliderCarousel.css';
+import '../css/searchBarstyle.css';
 
 
 class Personnages extends Component {
-  state = {
-    //sideBarOpen: false,
-    //openModal: false,
-    //characterId: '',
-    //heroName: '',
-    //characterImg: {},
-    //description: ''
-    researchResult:null,
-    isContentshow:true
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      sideBarOpen: false,
+      researchResult:null,
+      isContentshow:true
+    };
+  }
+
 
 
   handleSearch = (inputText) => {
@@ -64,9 +66,15 @@ class Personnages extends Component {
   }
 
 
+  clickCard(id, name, thumbnail, description) {
+    this.openModalWithId(id, name, thumbnail.path + '.' + thumbnail.extension, description);
+  }
+
+
   render() {
 
     const noImage = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available';
+    const noGif = 'http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708';
 
 
     return (
@@ -83,28 +91,30 @@ class Personnages extends Component {
 
 
         <SearchCharacter
-        handleSearch={this.handleSearch}/>
+        handleSearch={this.handleSearch}
+        />
 
         <div className="cardContainer">
         {
           this.state.researchResult != null &&
           this.state.researchResult
-            .filter(image => image.thumbnail.path !== noImage && image.description !== '')
-            .map(({id, thumbnail, name}, i) => (
-              <picture key={i} id={id}>
-                   <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} className='heroesCard' />
-               </picture>               
-                
-        
-            ))
-        }
+          .filter(image => image.thumbnail.path !== noImage && image.thumbnail.path !== noGif && image.description !== '')
+          .map(({ id, thumbnail, name, description }, i) => (                    
+            <picture className='transitionCharacter' key={i} id={id} description={description}
+            onClick={() => this.clickCard(id, name, thumbnail, description)} >
+                <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} className='heroesCard' />
+                <h4 className='overlayCharacter titleName'>{name}</h4>
+            </picture>
+    ))}
+
+
+
         </div>
 
         {
           this.state.researchResult == '' &&
-          <p>pas de résultat</p>
+          <p id="noResult">Nous n'avons pas trouvé votre héro... Recommencez...</p>
         }
-
 
 
         {
@@ -122,15 +132,8 @@ class Personnages extends Component {
           description={this.state.description}
         />
 
-        <MarvelModal 
-          openModal={this.state.openModal}
-          closeModal={this.closeModal}
-          characterId={this.state.characterId}
-          heroName={this.state.heroName}
-          characterImg={this.state.thumbnail}
-          description={this.state.description}
-         />
         <Footer />
+
       </Container>
     );
   }
