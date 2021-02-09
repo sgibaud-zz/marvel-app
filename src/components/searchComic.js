@@ -31,7 +31,7 @@ class SearchComic extends Component {
                 <button
                 id="searchButton"
                 onClick={() => this.props.handleSearch(this.state.inputText)}
-                > <SearchIcon fontSize="small"/> OK</button>
+                > <SearchIcon fontSize="small"/> GO!</button>
             </div>
         )
     }

@@ -8,6 +8,7 @@ import HeroCarousel from "../components/HeroCarousel";
 import SliderCharacter from '../components/slideCharacter';
 import SliderComics from '../components/slideComics';
 import Footer from '../components/footer';
+//import Combat from  '../components/combatMarvel';
 
 /* import CSS */
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -44,13 +45,13 @@ class Home extends Component {
 
           <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
         </div>
-
         <HeroCarousel />
 
         <SliderCharacter categorieTitle="Les personnages" />
         <SliderComics categorieTitle="Les comics" />
 
         <Footer />
+        
       </Container>
     );
   }

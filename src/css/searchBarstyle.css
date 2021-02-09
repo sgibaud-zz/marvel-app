@@ -51,3 +51,28 @@
     font-size: 1em;
     text-align: center;
 }
+
+
+
+
+
+/* GAME */
+
+
+#choice{
+    border: 1px solid white;
+    width: 200px;
+    height: 200px;
+}
+
+.choiceAllie{
+    border: 1px solid white;
+    width: 200px;
+    height: 200px;
+}
+
+.choiceenemie{
+    border: 1px solid white;
+    width: 200px;
+    height: 200px;
+}
