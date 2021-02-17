@@ -42,7 +42,6 @@ class Home extends Component {
       <Container>
         <div>
           <NavBar open={this.handleOpen} />
-
           <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
         </div>
         <HeroCarousel />

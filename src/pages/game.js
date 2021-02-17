@@ -8,6 +8,7 @@ import SideNavBar from "../components/SideNavBar";
 
 import '../css/searchBarstyle.css';
 import '../css/sliderCarousel.css';
+import '../css/style.css';
 
 
 class Game extends Component {
@@ -18,19 +19,25 @@ class Game extends Component {
     this.state = {
       choice1: 'http://graphisme.draconic-graphisme.com/marvel/shadow.jpg',
       choice2: "http://graphisme.draconic-graphisme.com/marvel/shadow.jpg",
+      dead: 'http://graphisme.draconic-graphisme.com/marvel/gif-deadpool-2.gif',
       sideBarOpen: false,
-    openModal: false
+      openModal: false,
+      lifeHero: '',
+      lifeEnemie: ''
     };
   }
 
-  saveChoice1 = (image) => {
-    this.setState({ choice1: image });
+  //function d'état lié aux composants allies.js et enemies.js
+  saveChoice1 = (image, lifeHero, strengthHero) => {
+    this.setState({ choice1: image, lifeHero: lifeHero, strengthHero: strengthHero });
   }
 
-  saveChoice2 = (image) => {
-    this.setState({ choice2: image });
+  saveChoice2 = (image, lifeEnemie, strengthEnemie) => {
+    this.setState({ choice2: image, lifeEnemie: lifeEnemie, strengthEnemie: strengthEnemie });
     //alert('tests');
   }
+
+
 
   handleOpen = () => {
     this.setState({
@@ -45,35 +52,75 @@ class Game extends Component {
   };
 
 
+  //function fight hero <-> enemies
+  attackCard() {
+    //jet de dé random
+    const rollDice = () => Math.floor(Math.random() * 12);
+    const dice1 = rollDice();
+    const dice2 = rollDice();
+
+    // Conditions de réussite et de dégâts
+    if (
+      dice1 <= this.state.strengthHero &&
+      dice2 <= this.state.strengthEnemie
+    ) {
+      this.setState({
+        lifeHero: this.state.lifeHero - 1,
+        lifeEnemie: this.state.lifeEnemie - 1
+      });
+    }
+    if (dice1 > this.state.strengthHero && dice2 <= this.state.strengthEnemie) {
+      this.setState({ lifeHero: this.state.lifeHero - 1 });
+    }
+    if (dice1 <= this.state.strengthHero && dice2 > this.state.strengthEnemie) {
+      this.setState({ lifeEnemie: this.state.lifeEnemie - 1 });
+    }    
+  }
+
   render() {
+
+    //variable pour initialiser le this.state
+    const { choice1, choice2, dead, lifeEnemie, lifeHero, sideBarOpen } = this.state;
+
     return (
       <>
-      <Container>
-        <>
+        <Container>
+          <>
 
-        <div>
-          <NavBar open={this.handleOpen} />
+            <div>
+              <NavBar open={this.handleOpen} />
 
-          <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
-        </div>
-          <Row>
-            <div className='heroCard'>
-              <img className="heroFight" src={this.state.choice1} alt='' />
-              <button className='btn'>PLAY</button>
-              <img className="heroFight" src={this.state.choice2} alt='' />
+              <SideNavBar close={this.handleClose} display={sideBarOpen} />
             </div>
-          </Row>
 
-          <h4 className='titleSlider textCenter'>Alliés</h4>
-          <Allies saveChoice1={this.saveChoice1} />
-          
-          <h4 className='titleSlider textCenter'>Ennemis</h4>
-          <Enemies saveChoice2={this.saveChoice2} />
+            <Row>
+                {/* heros : Card qui affiche les points de vie ou null et condition suite état combat win or lose */}
+                <div className='heroCard'>
+                  <div className='area'>{lifeHero !== 0 ? `${lifeHero}` : null}</div>
+                  <img className="heroFight" src={lifeHero !== 0 ? `${choice1}` : `${dead}`} alt='' />
+                </div>
 
-        </>
-      </Container>
+                <button className='btn btnGame' onClick={() => this.attackCard()}>FIGHT</button>
 
-      <Footer />
+                {/* Enemies : Card qui affiche les points de vie ou null et condition suite état combat win or lose */}
+                <div className='heroCard'>
+                  <div className='area'>{lifeEnemie !== 0 ? `${lifeEnemie}` : null}</div>
+                  <img className="heroFight" src={lifeEnemie !== 0 ? `${choice2}` : `${dead}`} alt='' />
+                </div>
+             
+            </Row>
+
+            {/* Card heros and enemies */}
+            <h4 className='titleSlider textCenter'>Alliés</h4>
+            <Allies saveChoice1={this.saveChoice1} />
+
+            <h4 className='titleSlider textCenter'>Ennemis</h4>
+            <Enemies saveChoice2={this.saveChoice2} />
+
+          </>
+        </Container>
+
+        <Footer />
       </>
     )
   }

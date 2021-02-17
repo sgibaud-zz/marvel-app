@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Row } from 'react-bootstrap';
 
-import '../css/searchBarstyle.css';
 import '../css/sliderCarousel.css';
 
 
@@ -15,37 +14,42 @@ class Allies extends Component {
     };
   }
 
+  // appel de l'api au chargement du Composant
+  // mise à jour du state de allies avec le tableau de l'api 
   componentDidMount = () => {
-    fetch("https://marvel-api-81035-default-rtdb.firebaseio.com/character/allies.json")
+    fetch("https://marvel-api-81035-default-rtdb.firebaseio.com/character/allies.json") //database créée sur sur firebase
       .then((resp) => resp.json())
       .then((data) => this.setState({ allies: data }));
   };
 
 
   render() {
+
+    // si le tableau est retourné par l'api alors j'affiche les 5 heros alliés sur ma page
+    // j'utilise un .map qui parcourt le tableau et affiche l'image et les caractéristiques de chaque allié
+    // sur le click de l'image, j'envoi les info du héro selectionné sur le composant parent (Game)
+
     return (
       <Row>
-        <>
-          
+        <>    
           
             {
               this.state.allies != null &&
-              this.state.allies.map((m, i) =>
+              this.state.allies.map(({image, durability, strength, id, energy}, i) =>
                 <>
-                  <img className="transitionGame" id={m.id}
-                    onClick={() => this.props.saveChoice1(m.image)} src={m.image}
+                  <img className="transitionGame" id={id}
+                    onClick={() => this.props.saveChoice1(image, durability, strength)} src={image}
                     key={i} alt='' />
-                  <p>{m.strength}</p>
-                  <p>{m.energy}</p>
+                  <p>{strength}</p>
+                  <p>{energy}</p>
                 </>
               )
             }
-         
+        
         </>
       </Row >
     )
   }
 }
-
 
 export default Allies;

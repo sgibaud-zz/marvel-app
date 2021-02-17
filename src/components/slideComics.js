@@ -12,7 +12,7 @@ import md5 from 'md5';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
+//Commentaires identiques à slideCharacter.js
 export default class SliderComics extends Component {
     constructor(props) {
         super(props);
@@ -37,14 +37,12 @@ export default class SliderComics extends Component {
 
     clickComic(id, thumbnail, title) {
         this.setState({ openModalComic: true, comicId: id, title: title, comicImg: thumbnail.path + '.' + thumbnail.extension });
-        //this.props.onClickComic(id, digitalId, thumbnail, title);
     }
 
 
     closeModalComic = () => {
         this.setState({ openModalComic: false });
     }
-    //<ModalComic />
 
     render() {
         const settings = {
@@ -94,6 +92,9 @@ export default class SliderComics extends Component {
         // pour ne pas afficher les heros sans vignette
         const noImage = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available';
 
+
+        //map qui génére le slider
+        //function clickCard qui renvoi les paramètres pour les passer en props dans la modal
         return (
 
             <Container>

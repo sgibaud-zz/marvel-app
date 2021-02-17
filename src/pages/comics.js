@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 //component Marvel
 import NavBar from "../components/NavBar";
 import SideNavBar from "../components/SideNavBar";
-import BackDrop from "../components/BackDrop";
 import Footer from '../components/footer';
 import ComicsCard from '../components/comicsCard';
 import ModalComic from '../components/modalComic';
@@ -26,6 +25,8 @@ class Comics extends Component {
     };
   }
 
+
+  //function fetch lié au composant searchComic
   handleSearch = (inputText) => {
     const timestamp = Number(new Date());
         const API_PUBLIC_KEY = process.env.REACT_APP_MARVEL_API_PUBLIC_KEY;
@@ -43,6 +44,8 @@ class Comics extends Component {
     this.setState({isContentshow:false});
   }
 
+
+  //function sideBar
   handleOpen = () => {
     this.setState({
       sideBarOpen: true
@@ -55,16 +58,19 @@ class Comics extends Component {
     });
   };
 
+  //function d'état lié au map après l'appel du searchComic
+  clickCard(id, title, thumbnail, description) {
+    this.clickComic(id, title, thumbnail.path + '.' + thumbnail.extension, description);
+  }
+
+
+  //function d'état lié au composant slideComic
   clickComic(id, title, thumbnail) {
     this.setState({ openModalComic: true, comicId: id, title: title, comicImg: thumbnail});
   }
 
   closeModalComic = () => {
     this.setState({ openModalComic: false });
-  }
-
-  clickCard(id, title, thumbnail, description) {
-    this.clickComic(id, title, thumbnail.path + '.' + thumbnail.extension, description);
   }
 
 
@@ -79,11 +85,7 @@ class Comics extends Component {
 
         <div>
           <NavBar open={this.handleOpen} />
-          {this.state.sideBarOpen ? (
-            <div>
-              <BackDrop close={this.handleClose} />{" "}
-            </div>
-          ) : null}
+      
           <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
         </div>
 
@@ -107,12 +109,12 @@ class Comics extends Component {
         </div>
 
         {
-          this.state.researchResult == '' &&
+          this.state.researchResult === '' &&
           <p>pas de résultat</p>
         }
 
         {
-          this.state.isContentshow == true &&
+          this.state.isContentshow === true &&
           <ComicsCard cardTitle="Les comics Marvel"
           onClickCard={(id, title, thumbnail) => this.clickComic(id, title, thumbnail.path + '.' + thumbnail.extension)} />
         }
