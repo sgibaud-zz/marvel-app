@@ -1,11 +1,11 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
+import {Container} from 'react-bootstrap';
 import md5 from 'md5';
 
 //Import CSS
 import '../css/sliderCarousel.css'
 
-
+//Commentaires : se référer à comicsCard.js
 class MarvelCard extends React.Component {
     constructor(props) {
         super(props);
@@ -50,13 +50,13 @@ class MarvelCard extends React.Component {
                                 this.state.character
                                     .filter(image => image.thumbnail.path !== noImage && image.thumbnail.path !== noGif && image.description !== '')
                                     .map(({ id, thumbnail, name, description }, i) => (
-                                        
-                                            <picture className='transitionCharacter' key={i} id={id} description={description}
-                                                onClick={() => this.clickCard(id, name, thumbnail, description)}  >
-                                                <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} className='heroesCard' />
-                                                <h4 className='overlayCharacter titleName'>{name}</h4>
-                                            </picture>
-                                        
+
+                                        <picture className='transitionCharacter' key={i} id={id} description={description}
+                                            onClick={() => this.clickCard(id, name, thumbnail, description)}  >
+                                            <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} className='heroesCard' />
+                                            <h4 className='overlayCharacter titleName'>{name}</h4>
+                                        </picture>
+
                                     ))}
 
                         </div>
@@ -68,10 +68,5 @@ class MarvelCard extends React.Component {
         )
     }
 };
-
-
-
-
-
 
 export default MarvelCard;

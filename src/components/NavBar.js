@@ -2,7 +2,8 @@ import React from "react";
 import "../css/layout.css";
 import MenuIcon from '@material-ui/icons/Menu';
 
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 
 const NavBar = ({ open }) => {
@@ -19,7 +20,7 @@ const NavBar = ({ open }) => {
         </div>
       </div>
       <div onClick={open} className="nav-icon">
-        <MenuIcon fontSize="large"/>
+        <MenuIcon fontSize="large" />
       </div>
     </nav>
   );

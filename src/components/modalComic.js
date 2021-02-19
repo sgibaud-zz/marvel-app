@@ -5,8 +5,7 @@ import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
 import ModalFooter from 'react-bootstrap/ModalFooter';
 
-
-
+//On récupère des parents (slideComics et comicsCard) les props
 class ModalComic extends React.Component {
 
 
@@ -19,7 +18,7 @@ class ModalComic extends React.Component {
         </ModalHeader>
 
         <ModalBody>
-          <img id="imgModal" src={this.props.comicImg} alt={this.props.title} />
+          <img className="imgModal" src={this.props.comicImg} alt={this.props.title} />
         </ModalBody >
         
         <ModalFooter className="modalFooter">

@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 
 
 const SideNavBar = ({ close, display }) => {
+  
+  // variable appelant la classe CSS lors du mode responsive
   let Classes = "side-nav-bar";
   if (display) {
     Classes = "side-nav-bar open";
