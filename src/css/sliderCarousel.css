@@ -14,7 +14,6 @@
   outline: none;
 }
 
-
 /*hover slide Character + comic page Home */
 .transition {
   width: calc(17.5rem / 1.2);
@@ -28,13 +27,13 @@
   opacity: 0.75;
 }
 
-.transition:hover, .transitionComic:hover {
+.transition:hover,
+.transitionComic:hover {
   box-shadow: 0px 0px 0px 0.125rem #ffffff;
   transform: scale(1.05);
   transition: 0.5s linear !important;
   opacity: 1;
 }
-
 
 /*hover page Character and Comics */
 .transitionCharacter {
@@ -49,7 +48,6 @@
   transform: scale(1.05);
   transition: 0.5s linear !important;
 }
-
 
 /*hover page Game */
 .transitionGame {
@@ -78,7 +76,6 @@
   margin: 0.5rem 0 1.5rem 0;
 }
 
-
 /* Bande titre slider Character and pages Character */
 .overlay {
   position: absolute;
@@ -106,7 +103,6 @@
   text-align: center;
 }
 
-
 /* carousel Slider Slick */
 .carouselSlider {
   width: 100%;
@@ -119,7 +115,6 @@
 }
 .slick-list {
   padding: 0 0 0 1rem;
-  margin-left: 0;
 }
 
 .slick-track {
@@ -166,10 +161,8 @@
 
 .slick-slide,
 .slick-active {
-  display: block;
   width: 17.5rem;
 }
-
 
 /* Titre slider and pages */
 .titleSlider {
@@ -179,18 +172,17 @@
 /* Pages Character and Comics */
 .textCenter {
   justify-content: center;
-  margin-top:0;
-  margin-bottom:3rem;
-  margin-left:0;
-  margin-right:0;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  margin-left: 0;
+  margin-right: 0;
 }
-
 
 /*définition des cards*/
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
 .heroesCard {
@@ -198,7 +190,6 @@
   height: 16rem;
   border-radius: 0.4rem;
 }
-
 
 /* Personnalisation du composant Modal*/
 .modal-header {
@@ -218,7 +209,7 @@
   border: 0;
 }
 
-.modalText{
+.modalText {
   padding: 1rem;
 }
 
@@ -259,18 +250,17 @@
 
 .btn:hover {
   background-image: url("../images/btn_marvel_dark.svg");
-  transition: .25s ease-in-out;
+  transition: 0.25s ease-in-out;
   color: rgb(86, 29, 36);
   outline: none;
 }
 
-.modalBody{
+.modalBody {
   display: flex;
 }
 
-
 /* CSS SearchBar */
-.searchBar{
+.searchBar {
   margin-top: 30px;
   margin-bottom: 50px;
   display: flex;
@@ -279,55 +269,51 @@
   align-items: center;
 }
 
-#searchInput{
+#searchInput {
   width: 80%;
   height: 50px;
-  background-color: #080C14;
+  background-color: #080c14;
   border: 1px solid #151b2a;
   font-size: 1em;
   padding-left: 30px;
   color: white;
 }
 
-#searchInput::placeholder { 
+#searchInput::placeholder {
   color: white;
 }
 
-#searchInput:focus{
+#searchInput:focus {
   background-color: #151b2a;
   border: 1px solid #151b2a;
   outline: none;
   color: white;
-  padding-left: 30px
+  padding-left: 30px;
 }
 
-#searchButton{
+#searchButton {
   width: 20%;
   height: 50px;
   background-color: #151b2a;
   border: 1px solid #151b2a;
   font-size: 1em;
   color: white;
-  cursor: pointer
-  ;
+  cursor: pointer;
 }
 
-#searchButton:hover{
-  background-color:#080C14;
+#searchButton:hover {
+  background-color: #080c14;
   border: 1px solid white;
 }
 
-
-#noResult{
+#noResult {
   color: white;
   font-size: 1em;
   text-align: center;
 }
 
-
-
 /* GAME */
-#choice{
+/* #choice{
   border: 1px solid white;
   width: 200px;
   height: 200px;
@@ -343,12 +329,41 @@
   border: 1px solid white;
   width: 200px;
   height: 200px;
+} */
+
+/* Media Query */
+/* 375 411 540 680 768 1024 */
+@media only screen and (max-width: 1200px) {
+  .marvelCatImg {
+    width: inherit;
+    height: inherit;
+    border-radius: 0.4rem;
+    margin-top: 2%;
+    margin-right: 1%;
+  }
 }
 
 
-/*Media Query*/
-@media (max-width: 768px) {
- .titleName {
+@media only screen and (max-width: 1024px) {
+  .marvelCatImg {
+    width: inherit;
+    height: inherit;
+    border-radius: 0.4rem;
+    margin-top: 2%;
+    margin-right: 1%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .marvelCatImg {
+    width: inherit;
+    height: inherit;
+    border-radius: 0.4rem;
+    margin-top: 2%;
+    margin-right: 1%;
+  }
+  
+  .titleName {
     font-size: 10px;
   }
 
@@ -365,12 +380,25 @@
   }
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 680px) {
   .marvelCatImg {
-    height: 30%;
+    width: inherit;
+    height: inherit;
+    border-radius: 0.4rem;
+    margin-top: 2%;
+    margin-right: 1%;
   }
+}
 
-  .slick-slide {
+@media only screen and (max-width: 540px) {
+  .marvelCatImg {
+    width: inherit;
+    height: inherit;
+    border-radius: 0.4rem;
+    margin-top: 2%;
+    margin-right: 1%;
+  }
+    .slick-slide {
     padding: 5%;
   }
 
@@ -381,5 +409,25 @@
   }
   .titleSlider {
     font-size: calc(28px / 1.3);
+  }
+}
+
+@media only screen and (max-width: 411px) {
+  .marvelCatImg {
+    width: inherit;
+    height: inherit;
+    border-radius: 0.4rem;
+    margin-top: 2%;
+    margin-right: 1%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .marvelCatImg {
+    width: inherit;
+    height: inherit;
+    border-radius: 0.4rem;
+    margin-top: 2%;
+    margin-right: 1%;
   }
 }
