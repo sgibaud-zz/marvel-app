@@ -3,7 +3,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import '../css/searchBarstyle.css';
 
-
+// function recherche lié à la page Comics
 class SearchComic extends Component {
 
     constructor(props){

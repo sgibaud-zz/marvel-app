@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import Container from 'react-bootstrap/Container';
+import {Container} from 'react-bootstrap';
 
 //component Marvel
 import NavBar from "../components/NavBar";
 import SideNavBar from "../components/SideNavBar";
-import BackDrop from "../components/BackDrop";
 import Footer from '../components/footer';
 import MarvelCard from '../components/marvelCard';
 import MarvelModal from '../components/modal';
@@ -15,7 +14,7 @@ import md5 from 'md5';
 import '../css/sliderCarousel.css';
 import '../css/searchBarstyle.css';
 
-
+//Commentaires idem ../pages/comics.js
 class Personnages extends Component {
   constructor(props) {
     super(props);
@@ -57,6 +56,7 @@ class Personnages extends Component {
     });
   };
 
+  
   openModalWithId(id, name, thumbnail, description) {
     this.setState({ openModalCharacter: true, characterId: id, heroName: name, characterImg: thumbnail, description: description });
   }
@@ -81,14 +81,8 @@ class Personnages extends Component {
       <Container>
         <div>
           <NavBar open={this.handleOpen} />
-          {this.state.sideBarOpen ? (
-            <div>
-              <BackDrop close={this.handleClose} />{" "}
-            </div>
-          ) : null}
           <SideNavBar close={this.handleClose} display={this.state.sideBarOpen} />
         </div>
-
 
         <SearchCharacter
         handleSearch={this.handleSearch}
@@ -112,13 +106,13 @@ class Personnages extends Component {
         </div>
 
         {
-          this.state.researchResult == '' &&
+          this.state.researchResult === '' &&
           <p id="noResult">Nous n'avons pas trouvé votre héro... Recommencez...</p>
         }
 
 
         {
-          this.state.isContentshow == true &&
+          this.state.isContentshow === true &&
           <MarvelCard cardTitle="Les personnages Marvel"
             onClickCard={(id, name, thumbnail, description) => this.openModalWithId(id, name, thumbnail.path + '.' + thumbnail.extension, description)} />
         }

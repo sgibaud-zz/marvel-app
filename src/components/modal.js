@@ -5,12 +5,8 @@ import ModalTitle from 'react-bootstrap/ModalTitle';
 import ModalBody from 'react-bootstrap/ModalBody';
 import ModalFooter from 'react-bootstrap/ModalFooter';
 
-
-
-
-
+//On récupère des parents (marvelCard et slideCharacter) les props
 class MarvelModal extends React.Component {
-
 
   render() {
     return (
@@ -21,8 +17,8 @@ class MarvelModal extends React.Component {
         </ModalHeader>
 
         <ModalBody>
-          <img id="imgModal" src={this.props.characterImg} alt={this.props.heroName} />        
-            <p id="modalText">{this.props.description}</p>         
+          <img className="imgModal" src={this.props.characterImg} alt={this.props.heroName} />        
+            <p className="modalText">{this.props.description}</p>         
         </ModalBody >
 
         <ModalFooter className="modalFooter">

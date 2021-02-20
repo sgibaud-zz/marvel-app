@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 
+// import CSS
 import '../css/searchBarstyle.css';
 
-
+// function recherche lié à la page personnage
 class SearchCharacter extends Component {
 
     constructor(props){

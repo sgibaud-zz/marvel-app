@@ -20,32 +20,46 @@ export default class SliderCharacter extends Component {
         }
     }
 
-    // appel du fetch avec gestion TS
+    // appel du fetch avec gestion timestamp
     componentDidMount = () => {
-        //gestion du timestamp avec le hash de la clé pour l'appel de l'api
-        const timestamp = Number(new Date());
-        const API_PUBLIC_KEY = process.env.REACT_APP_MARVEL_API_PUBLIC_KEY;
-        const API_PRIVATE_KEY = process.env.REACT_APP_MARVEL_API_PRIVATE_KEY;
-        const hash = md5(timestamp + API_PRIVATE_KEY + API_PUBLIC_KEY);
+        const cachedImages = localStorage.getItem(this.state.images);
+        if (cachedImages) {
+            this.state({ images: JSON.parse(cachedImages) });
+        } else {
 
-        // appel du fetch 
-        fetch(`https://gateway.marvel.com/v1/public/characters?orderBy=-modified&ts=${timestamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
-            .then(resp => resp.json())
-            .then(data => this.setState({images:data.data.results}));
+            //gestion du timestamp avec le hash de la clé pour l'appel de l'api
+            const timestamp = Number(new Date());
+            const API_PUBLIC_KEY = process.env.REACT_APP_MARVEL_API_PUBLIC_KEY;
+            const API_PRIVATE_KEY = process.env.REACT_APP_MARVEL_API_PRIVATE_KEY;
+            const hash = md5(timestamp + API_PRIVATE_KEY + API_PUBLIC_KEY);
+
+            // appel du fetch 
+            fetch(`https://gateway.marvel.com/v1/public/characters?orderBy=-modified&ts=${timestamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
+                .then(resp => resp.json())
+                .then(data => this.setState({ images: data.data.results }));
+        }
     };
 
+    onSetResult = (result, key) => {
+        localStorage.setItem(key, JSON.stringify(result.images));    
+        this.setState({ images: result.images });
+      };
+
+    //Function qui met à jour les states et ouvre la modal
     clickCard(id, name, thumbnail, description) {
         this.setState({ openModalCharacter: true, characterId: id, heroName: name, characterImg: thumbnail.path + '.' + thumbnail.extension, description: description });
-        //this.props.onClickCard(id, name, thumbnail, description);
     }
 
+    //Function qui met à jour le state et ferme la modal
     closeModalCharacter = () => {
         this.setState({ openModalCharacter: false });
     }
 
-    //<ModalMarvel />
+
 
     render() {
+
+        //paramètres du slider
         const settings = {
             dots: false,
             infinite: false,
@@ -58,13 +72,30 @@ export default class SliderCharacter extends Component {
             className: 'carouselSlider',
             responsive: [
                 {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 2,
+                        infinite: false,
+                        dots: false,
+                    }
+                },
+                {
                     breakpoint: 1024,
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 2,
                         infinite: false,
                         dots: false,
-
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 2,
+                        infinite: false,
+                        dots: false,
                     }
                 },
                 {
@@ -72,13 +103,21 @@ export default class SliderCharacter extends Component {
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 1,
-                        //centerPadding: '10px',
                         initialSlide: 0,
                         centerMode: true
                     }
                 },
                 {
-                    breakpoint: 480,
+                    breakpoint: 540,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        initialSlide: 0,
+                        centerMode: true
+                    }
+                },
+                {
+                    breakpoint: 411,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 1,
@@ -86,12 +125,24 @@ export default class SliderCharacter extends Component {
                         infinite: false,
                         dots: false
                     }
+                },
+                {
+                    breakpoint: 375,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        initialSlide: 0,
+                        centerMode: true
+                    }
                 }
             ]
         };
 
-        // pour ne pas afficher les heros sans vignette
+        // pour ne pas afficher les heros sans images
         const noImage = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available';
+
+        //map qui génére le slider
+        //function clickCard qui renvoi les paramètres pour les passer en props dans la modal
 
         return (
 
@@ -117,7 +168,7 @@ export default class SliderCharacter extends Component {
                                 ))}
                     </Slider>
 
-                    <MarvelModal
+                    <MarvelModal //On transmet par des props les states à l'enfant (modal.js)
                         openModalCharacter={this.state.openModalCharacter}
                         closeModalCharacter={this.closeModalCharacter}
                         characterId={this.state.characterId}
