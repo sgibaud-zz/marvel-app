@@ -6,6 +6,8 @@ import Footer from '../components/footer';
 import NavBar from "../components/NavBar";
 import SideNavBar from "../components/SideNavBar";
 
+import Fight from "../images/futur.png"
+
 import '../css/searchBarstyle.css';
 import '../css/sliderCarousel.css';
 import '../css/style.css';
@@ -94,29 +96,54 @@ class Game extends Component {
               <SideNavBar close={this.handleClose} display={sideBarOpen} />
             </div>
 
+            <div id="TitleGame">
+              <img id="ImageGame" src={Fight}/>
+            </div>
+
+
+    
+
             <Row>
                 {/* heros : Card qui affiche les points de vie ou null et condition suite état combat win or lose */}
-                <div className='heroCard'>
-                  <div className='area'>{lifeHero !== 0 ? `${lifeHero}` : null}</div>
-                  <img className="heroFight" src={lifeHero !== 0 ? `${choice1}` : `${dead}`} alt='' />
-                </div>
 
-                <button className='btn btnGame' onClick={() => this.attackCard()}>FIGHT</button>
+                <div className="ContainerFightersChoosen">
 
-                {/* Enemies : Card qui affiche les points de vie ou null et condition suite état combat win or lose */}
-                <div className='heroCard'>
-                  <div className='area'>{lifeEnemie !== 0 ? `${lifeEnemie}` : null}</div>
-                  <img className="heroFight" src={lifeEnemie !== 0 ? `${choice2}` : `${dead}`} alt='' />
+                  <div className='heroCard'>
+                    <div className='area'>{lifeHero !== 0 ? `${lifeHero}` : null}</div>
+                    <img className="heroFight" src={lifeHero !== 0 ? `${choice1}` : `${dead}`} alt='' />
+                  </div>
+
+                  <button className='btn btnGame' onClick={() => this.attackCard()}>FIGHT</button>
+
+                  {/* Enemies : Card qui affiche les points de vie ou null et condition suite état combat win or lose */}
+                  <div className='heroCard'>
+                    <div className='area'>{lifeEnemie !== 0 ? `${lifeEnemie}` : null}</div>
+                    <img className="heroFight" src={lifeEnemie !== 0 ? `${choice2}` : `${dead}`} alt='' />
+                  </div>
+
                 </div>
              
             </Row>
 
-            {/* Card heros and enemies */}
-            <h4 className='titleSlider textCenter'>Alliés</h4>
-            <Allies saveChoice1={this.saveChoice1} />
+            <div className="GameRules">
+              <h4 className="rulestitle">RÈGLES DU JEU</h4>
+              <p className="rules">Choisis 1 ALLIÉ et 1 ENNEMI pour les faire combattre en cliquant sur le bouton FIGHT. En cliquant sur FIGHT, tu lances des attaques qui font perdre des points de vies aux héros. Le premier héro sans point de vie perd la partie.</p>
+            </div>
 
-            <h4 className='titleSlider textCenter'>Ennemis</h4>
-            <Enemies saveChoice2={this.saveChoice2} />
+            {/* Card heros and enemies */}
+
+            <div className="ContainerAlliesandEnnemies">
+
+              <div className="TeamAllies">
+                <h4 className='titleSlider textCenter'> LES ALLIÉS</h4>
+                <Allies saveChoice1={this.saveChoice1} />
+              </div>
+
+              <div className="TeamEnnemies">
+                <h4 className='titleSlider textCenter'>LES ENNEMIS</h4>
+                <Enemies saveChoice2={this.saveChoice2} />
+              </div>
+            </div>
 
           </>
         </Container>

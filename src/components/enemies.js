@@ -31,19 +31,17 @@ class Enemies extends Component {
 
     return (
       <Row>
-        <>
+        <div className="ContainerFighters">    
 
           {
             this.state.enemies != null &&
             this.state.enemies.map(({ image, durability, strength, id, energy }, i) =>
-              <>
+              <div className="FightersList">
                 <img key={i} id={id} className="transitionGame" onClick={() => this.props.saveChoice2(image, durability, strength)} src={image} alt='' />
-                <p>{strength}</p>
-                <p>{energy}</p>
-              </>
+              </div>
             )
           }
-        </>
+        </div>
       </Row>
     )
   }
