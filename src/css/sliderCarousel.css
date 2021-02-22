@@ -14,7 +14,6 @@
   outline: none;
 }
 
-
 /*hover slide Character + comic page Home */
 .transition {
   width: calc(17.5rem / 1.2);
@@ -28,18 +27,18 @@
   opacity: 0.75;
 }
 
-.transition:hover, .transitionComic:hover {
+.transition:hover,
+.transitionComic:hover {
   box-shadow: 0px 0px 0px 0.125rem #ffffff;
   transform: scale(1.05);
   transition: 0.5s linear !important;
   opacity: 1;
 }
 
-
 /*hover page Character and Comics */
 .transitionCharacter {
-  width: 16rem;
-  height: 16rem;
+  width: calc(16rem/1.2);
+  height: calc(16rem/1.2);
   border-radius: 0.4rem;
   margin-bottom: 1.5rem;
 }
@@ -49,7 +48,6 @@
   transform: scale(1.05);
   transition: 0.5s linear !important;
 }
-
 
 /*hover page Game */
 .transitionGame {
@@ -78,7 +76,6 @@
   margin: 0.5rem 0 1.5rem 0;
 }
 
-
 /* Bande titre slider Character and pages Character */
 .overlay {
   position: absolute;
@@ -101,11 +98,10 @@
   border-radius: 0 0 0.4rem 0.4rem;
   opacity: 1;
   color: white;
-  font-size: 1rem;
-  padding: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.55rem;
   text-align: center;
 }
-
 
 /* carousel Slider Slick */
 .carouselSlider {
@@ -119,7 +115,6 @@
 }
 .slick-list {
   padding: 0 0 0 1rem;
-  margin-left: 0;
 }
 
 .slick-track {
@@ -166,10 +161,8 @@
 
 .slick-slide,
 .slick-active {
-  display: block;
   width: 17.5rem;
 }
-
 
 /* Titre slider and pages */
 .titleSlider {
@@ -179,28 +172,31 @@
 /* Pages Character and Comics */
 .textCenter {
   justify-content: center;
-  margin-top:0;
-  margin-bottom:3rem;
-  margin-left:0;
-  margin-right:0;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  margin-left: 0;
+  margin-right: 0;
 }
-
 
 /*définition des cards*/
 .cardContainer {
-  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content:space-between;
+  justify-content: space-around;
+  display: flex;
 }
 
 .heroesCard {
-  width: 16rem;
-  height: 16rem;
+  width: calc(16rem/1.2);
+  height: calc(16rem/1.2);
   border-radius: 0.4rem;
 }
 
-
 /* Personnalisation du composant Modal*/
+.modal-content {
+  width: 60%;
+}
+
 .modal-header {
   background: rgba(236, 29, 36, 1);
   border: 0;
@@ -208,6 +204,7 @@
 
 .modal-title {
   color: white;
+  font-size: 1.3rem;
 }
 
 .modal-body {
@@ -216,9 +213,10 @@
 
 .modal-footer {
   border: 0;
+  width: 100%;
 }
 
-.modalText{
+.modalText {
   padding: 1rem;
 }
 
@@ -259,18 +257,17 @@
 
 .btn:hover {
   background-image: url("../images/btn_marvel_dark.svg");
-  transition: .25s ease-in-out;
+  transition: 0.25s ease-in-out;
   color: rgb(86, 29, 36);
   outline: none;
 }
 
-.modalBody{
+.modalBody {
   display: flex;
 }
 
-
 /* CSS SearchBar */
-.searchBar{
+.searchBar {
   margin-top: 30px;
   margin-bottom: 50px;
   display: flex;
@@ -279,55 +276,51 @@
   align-items: center;
 }
 
-#searchInput{
+#searchInput {
   width: 80%;
   height: 50px;
-  background-color: #080C14;
+  background-color: #080c14;
   border: 1px solid #151b2a;
   font-size: 1em;
   padding-left: 30px;
   color: white;
 }
 
-#searchInput::placeholder { 
+#searchInput::placeholder {
   color: white;
 }
 
-#searchInput:focus{
+#searchInput:focus {
   background-color: #151b2a;
   border: 1px solid #151b2a;
   outline: none;
   color: white;
-  padding-left: 30px
+  padding-left: 30px;
 }
 
-#searchButton{
+#searchButton {
   width: 20%;
   height: 50px;
   background-color: #151b2a;
   border: 1px solid #151b2a;
   font-size: 1em;
   color: white;
-  cursor: pointer
-  ;
+  cursor: pointer;
 }
 
-#searchButton:hover{
-  background-color:#080C14;
+#searchButton:hover {
+  background-color: #080c14;
   border: 1px solid white;
 }
 
-
-#noResult{
+#noResult {
   color: white;
   font-size: 1em;
   text-align: center;
 }
 
-
-
 /* GAME */
-#choice{
+/* #choice{
   border: 1px solid white;
   width: 200px;
   height: 200px;
@@ -343,43 +336,159 @@
   border: 1px solid white;
   width: 200px;
   height: 200px;
+} */
+
+/* Media Query */
+/* 375 411 540 680 768 1024 */
+
+@media only screen and (max-width: 1024px) {
+
+.container {
+    padding: 0 0.2rem;
+}
+
+/*hover page Character and Comics */
+.transitionCharacter {
+  width: calc(850px/5.5);
+  height: calc(850px/5.5);
+  overflow: hidden;
 }
 
 
-/*Media Query*/
-@media (max-width: 768px) {
- .titleName {
-    font-size: 10px;
-  }
-
-  .heroesCard {
-    width: 100px;
-    height: 50px;
-    margin: 20px;
-    justify-content: center;
-  }
-
-  .heroesCard:hover {
-    border: solid darkgrey 2px;
-    cursor: pointer;
-  }
+/*définition des cards*/
+.heroesCard {
+  width: 100%;
 }
 
-@media only screen and (max-width: 576px) {
-  .marvelCatImg {
-    height: 30%;
-  }
+/* Bande titre slider Character and pages Character */
+.overlayCharacter {
+  
+  bottom: 5.5rem;
+  font-size: 0.65rem;
+  padding: 0.55rem;
+  position: relative;
+}
 
-  .slick-slide {
-    padding: 5%;
-  }
+#searchInput {
+  width: 80%;
+  height: 30px !important;
+  background-color: #080c14;
+  border: 1px solid #151b2a;
+  font-size: 1em;
+  padding-left: 30px;
+  color: white;
+}
 
-  .slick-prev,
-  .slick-next {
-    height: 80%;
-    width: 40px;
-  }
-  .titleSlider {
-    font-size: calc(28px / 1.3);
-  }
+#searchInput::placeholder {
+  color: white;
+}
+
+#searchInput:focus {
+  background-color: #151b2a;
+  border: 1px solid #151b2a;
+  outline: none;
+  color: white;
+  padding-left: 30px;
+}
+
+#searchButton {
+  width: 20%;
+  height: 30px !important;
+  background-color: #151b2a;
+  border: 1px solid #151b2a;
+  font-size: 1em;
+  color: white;
+  cursor: pointer;
+}
+
+#searchButton:hover {
+  background-color: #080c14;
+  border: 1px solid white;
+}
+
+/* Personnalisation du composant Modal*/
+/* Personnalisation du composant Modal*/
+.modal-content {
+width: 60%;
+display: flex;
+margin-left: 20%;
+
+}
+
+/* Personnalisation du composant Modal*/
+.modal-content {
+width: 75%;
+}
+
+.modal-header {
+background: rgba(236, 29, 36, 1);
+border: 0;
+}
+
+.modal-title {
+color: white;
+font-size: 0.7rem;
+}
+
+.modal-body {
+padding: 0;
+}
+
+.modal-footer {
+border: 0;
+width: 100%;
+}
+
+.modalText {
+padding: 1rem;
+font-size: 0.5rem;
+margin-bottom: -1rem;
+}
+
+.imgModal {
+width: 100%;
+margin: 0;
+}
+
+.heroesImg {
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.modalFooter {
+display: flex;
+justify-content: center;
+}
+
+.btn {
+background-image: url("../images/btn_marvel.svg");
+background-repeat: no-repeat;
+background-size: contain;
+width: 4rem;
+height: 2rem;
+display: inline-block;
+font-weight: 400;
+padding-right: 1rem;
+padding-bottom: 1.5rem;
+font-size: 0.5rem;
+color: white;
+margin-left: 1rem;
+}
+
+.btnGame {
+outline: none;
+margin-top: 8.5rem;
+}
+
+.btn:hover {
+background-image: url("../images/btn_marvel_dark.svg");
+transition: 0.25s ease-in-out;
+color: rgb(86, 29, 36);
+outline: none;
+}
+
+.modalBody {
+display: flex;
+}
 }

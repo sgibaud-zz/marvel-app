@@ -51,11 +51,12 @@ class MarvelCard extends React.Component {
                                     .filter(image => image.thumbnail.path !== noImage && image.thumbnail.path !== noGif && image.description !== '')
                                     .map(({ id, thumbnail, name, description }, i) => (
 
-                                        <picture className='transitionCharacter' key={i} id={id} description={description}
+                                        <div className='transitionCharacter' key={i} id={id} description={description}
                                             onClick={() => this.clickCard(id, name, thumbnail, description)}  >
+                                                
                                             <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} className='heroesCard' />
-                                            <h4 className='overlayCharacter titleName'>{name}</h4>
-                                        </picture>
+                                            <h4 className='overlayCharacter'>{name}</h4>
+                                        </div>
 
                                     ))}
 

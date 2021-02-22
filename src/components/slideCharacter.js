@@ -72,7 +72,25 @@ export default class SliderCharacter extends Component {
             className: 'carouselSlider',
             responsive: [
                 {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 2,
+                        infinite: false,
+                        dots: false,
+                    }
+                },
+                {
                     breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 2,
+                        infinite: false,
+                        dots: false,
+                    }
+                },
+                {
+                    breakpoint: 768,
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 2,
@@ -85,19 +103,36 @@ export default class SliderCharacter extends Component {
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 1,
-                        //centerPadding: '10px',
                         initialSlide: 0,
                         centerMode: true
                     }
                 },
                 {
-                    breakpoint: 480,
+                    breakpoint: 540,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        initialSlide: 0,
+                        centerMode: true
+                    }
+                },
+                {
+                    breakpoint: 411,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 1,
                         centerPadding: '10px',
                         infinite: false,
                         dots: false
+                    }
+                },
+                {
+                    breakpoint: 375,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        initialSlide: 0,
+                        centerMode: true
                     }
                 }
             ]

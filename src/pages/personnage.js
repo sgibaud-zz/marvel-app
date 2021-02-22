@@ -88,7 +88,7 @@ class Personnages extends Component {
         handleSearch={this.handleSearch}
         />
 
-        <div className="cardContainer">
+        <div className="">
         {
           this.state.researchResult != null &&
           this.state.researchResult
