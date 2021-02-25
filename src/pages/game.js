@@ -96,8 +96,8 @@ class Game extends Component {
               <SideNavBar close={this.handleClose} display={sideBarOpen} />
             </div>
 
-            <div id="TitleGame">
-              <img id="ImageGame" src={Fight}/>
+            <div className="titleGame">
+              <img className="imageGame" src={Fight} alt='picto fight'/>
             </div>
 
 
@@ -106,7 +106,7 @@ class Game extends Component {
             <Row>
                 {/* heros : Card qui affiche les points de vie ou null et condition suite état combat win or lose */}
 
-                <div className="ContainerFightersChoosen">
+                <div className="containerFightersChoosen">
 
                   <div className='heroCard'>
                     <div className='area'>{lifeHero !== 0 ? `${lifeHero}` : null}</div>
@@ -125,22 +125,22 @@ class Game extends Component {
              
             </Row>
 
-            <div className="GameRules">
+            <div className="gameRules">
               <h4 className="rulestitle">RÈGLES DU JEU</h4>
               <p className="rules">Choisis 1 ALLIÉ et 1 ENNEMI pour les faire combattre en cliquant sur le bouton FIGHT. En cliquant sur FIGHT, tu lances des attaques qui font perdre des points de vies aux héros. Le premier héro sans point de vie perd la partie.</p>
             </div>
 
             {/* Card heros and enemies */}
 
-            <div className="ContainerAlliesandEnnemies">
+            <div className="containerAlliesandEnnemies">
 
-              <div className="TeamAllies">
-                <h4 className='titleSlider textCenter'> LES ALLIÉS</h4>
+              <div>
+                <h4 className='titleSlider'> LES ALLIÉS</h4>
                 <Allies saveChoice1={this.saveChoice1} />
               </div>
 
-              <div className="TeamEnnemies">
-                <h4 className='titleSlider textCenter'>LES ENNEMIS</h4>
+              <div>
+                <h4 className='titleSlider'>LES ENNEMIS</h4>
                 <Enemies saveChoice2={this.saveChoice2} />
               </div>
             </div>

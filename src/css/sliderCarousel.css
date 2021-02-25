@@ -4,43 +4,36 @@
   border-radius: 0.4rem;
 }
 
-.marvelCatComics {
-  width: calc(17.5rem / 1.2);
-  border-radius: 0.4rem;
-  opacity: 0.45;
-}
-
-.marvelImage a:focus {
-  outline: none;
+.marveCatComics {
+  margin-bottom: 0.5rem;
 }
 
 /*hover slide Character + comic page Home */
 .transition {
-  width: calc(17.5rem / 1.2);
+  width: 100%;
   border-radius: 0.4rem;
-  opacity: 0.45;
+  opacity: 0.6;
 }
 
-.transitionComic {
-  width: calc(17.5rem / 1.2);
-  border-radius: 0.4rem;
-  opacity: 0.75;
-}
-
-.transition:hover,
-.transitionComic:hover {
+.marvelCatImg:hover {
   box-shadow: 0px 0px 0px 0.125rem #ffffff;
+  transition: 0.5s linear !important;
+}
+
+.transition:hover {
   transform: scale(1.05);
   transition: 0.5s linear !important;
   opacity: 1;
 }
 
+
 /*hover page Character and Comics */
 .transitionCharacter {
-  width: calc(16rem/1.2);
-  height: calc(16rem/1.2);
+  width: 16rem;
+  height: 16rem;
   border-radius: 0.4rem;
   margin-bottom: 1.5rem;
+  overflow: hidden;
 }
 
 .transitionCharacter:hover {
@@ -49,9 +42,9 @@
   transition: 0.5s linear !important;
 }
 
-/* Page Game */
 
-#TitleGame{
+/* Page Game */
+.titleGame {
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -60,13 +53,13 @@
   margin-bottom: 20px;
 }
 
-#ImageGame{
+.imageGame {
   width: 100%;
   height: auto;
   border-radius: 0.4rem;
 }
 
-.GameRules{
+.gameRules {
   background-color: #0d121d;
   padding: 20px 10%;
   width: 80%;
@@ -78,30 +71,30 @@
   border-radius: 0.4rem;
 }
 
-.rules{
+.rules {
   color: white;
   font-size: 0.8em;
   text-align: center;
 }
 
-.rulestitle{
+.rulestitle {
   font-size: 1em;
 }
 
-.ContainerFightersChoosen{
+.containerFightersChoosen {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.ContainerFighters{
+.containerFighters {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.FightersList{
+.fightersList {
   margin-bottom: 30px;
 }
 
@@ -128,22 +121,16 @@
 }
 
 
-
-
-
-
-
-
 /* Bande titre slider Character and pages Character */
 .overlay {
-  position: absolute;
-  bottom: -0.55rem;
+  position: relative;
+  bottom: 1.8rem;
   background: rgba(236, 29, 36, 0.65);
   width: inherit;
   border-radius: 0 0 0.4rem 0.4rem;
   opacity: 1;
   color: white;
-  font-size: 1rem;
+  font-size: 0.7rem;
   padding: 0.5rem;
   text-align: center;
 }
@@ -156,40 +143,28 @@
   border-radius: 0 0 0.4rem 0.4rem;
   opacity: 1;
   color: white;
-  font-size: 0.9rem;
-  padding: 0.55rem;
+  font-size: 1rem;
+  padding: 0.5rem;
   text-align: center;
 }
+
 
 /* carousel Slider Slick */
 .carouselSlider {
   width: 100%;
-  margin-bottom: 2%;
-}
-
-.slick-slider {
-  margin: 0;
-  padding: 0 0.75rem 0 0;
-}
-.slick-list {
-  padding: 0 0 0 1rem;
+  padding-top: 0.5rem;
 }
 
 .slick-track {
-  margin: 0 0.5rem;
-  margin-left: 0;
+  left: -0.35rem;
+}
+
+.slick-list {
+  padding-bottom: 0.1rem;
 }
 
 .slick-disabled {
   visibility: hidden;
-}
-
-.slick-next {
-  right: 0.2rem;
-}
-
-.slick-prev {
-  left: 0.25rem;
 }
 
 .slick-prev,
@@ -197,10 +172,9 @@
   color: transparent;
   position: absolute;
   z-index: 1;
+  padding-bottom: 10px;
   outline: none;
-  height: 75%;
-  width: 2rem;
-  transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  width: 3rem;
 }
 
 .slick-next:before {
@@ -214,55 +188,66 @@
 }
 
 .slick-slide {
-  padding: 1rem 0.25rem !important;
+  margin-top: 1.75rem;
 }
 
-.slick-slide,
-.slick-active {
-  width: 17.5rem;
+.slick-next {
+  right: -0.75rem;
 }
+
 
 /* Titre slider and pages */
 .titleSlider {
   font-size: 1.3rem;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom:20px;
 }
+
 
 /* Pages Character and Comics */
 .textCenter {
   justify-content: center;
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   margin-left: 0;
   margin-right: 0;
 }
 
 /*définition des cards*/
 .cardContainer {
-  flex-direction: row;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  display: flex;
 }
 
 .heroesCard {
-  width: calc(16rem/1.2);
-  height: calc(16rem/1.2);
+  width: 16rem;
+  height: 16rem;
   border-radius: 0.4rem;
 }
 
+.comicsCard {
+  width: 100%;
+  border-radius: 0.4rem;
+}
+
+
 /* Personnalisation du composant Modal*/
-.modal-content {
-  width: 60%;
+.modal {
+  width: 50%;
+  top: 4%;
+  left: 25%;
 }
 
 .modal-header {
   background: rgba(236, 29, 36, 1);
   border: 0;
+  padding: 0.5rem 0.5rem;
 }
 
 .modal-title {
   color: white;
-  font-size: 1.3rem;
 }
 
 .modal-body {
@@ -271,7 +256,6 @@
 
 .modal-footer {
   border: 0;
-  width: 100%;
 }
 
 .modalText {
@@ -306,6 +290,7 @@
   font-size: 1rem;
   color: white;
   margin-left: 1rem;
+  border-radius:none;
 }
 
 .btnGame {
@@ -322,9 +307,6 @@
 .modalBody {
   display: flex;
 }
-
-
-
 
 
 /* CSS SearchBar */
@@ -380,203 +362,220 @@
   text-align: center;
 }
 
-/* GAME */
-/* #choice{
-  border: 1px solid white;
-  width: 200px;
-  height: 200px;
-}
 
-.choiceAllie{
-  border: 1px solid white;
-  width: 200px;
-  height: 200px;
-}
-
-.choiceenemie{
-  border: 1px solid white;
-  width: 200px;
-  height: 200px;
-} */
 
 /* Media Query */
 /* 375 411 540 680 768 1024 */
+@media (max-width: 1024px) {
+  .titleSlider {
+    font-size: calc(1.3rem / 1.4);
+  }
 
-@media only screen and (max-width: 1024px) {
+  .marvelCatImg {
+    width: inherit;
+  }
 
-.container {
-    padding: 0 0.2rem;
-}
+  .marveCatComics {
+    margin-bottom: 0.1rem !important;
+  }
 
-/*hover page Character and Comics */
-.transitionCharacter {
-  width: calc(850px/5.5);
-  height: calc(850px/5.5);
-  overflow: hidden;
-}
+  .overlay {
+    font-size: calc(0.7rem / 1.3);
+    padding: calc(0.5rem / 1.2);
+    bottom: calc(2.15rem / 1.5);
+  }
 
 
-/*définition des cards*/
-.heroesCard {
-  width: 100%;
-}
+  /*hover page Character and Comics */
+  .transitionCharacter {
+    width: calc(900px / 5.5);
+    height: calc(900px / 5.5);
+    overflow: hidden;
+  }
 
-/* Bande titre slider Character and pages Character */
-.overlayCharacter {
-  
-  bottom: 5.5rem;
-  font-size: 0.65rem;
-  padding: 0.55rem;
-  position: relative;
-}
 
-#searchInput {
-  width: 80%;
-  height: 30px !important;
-  background-color: #080c14;
-  border: 1px solid #151b2a;
-  font-size: 1em;
-  padding-left: 30px;
-  color: white;
-}
+  /*définition des cards*/
+  .heroesCard {
+    height: inherit;
+    padding-right: 50%;
+  }
 
-#searchInput::placeholder {
-  color: white;
-}
 
-#searchInput:focus {
-  background-color: #151b2a;
-  border: 1px solid #151b2a;
-  outline: none;
-  color: white;
-  padding-left: 30px;
-}
+  /*hover slide Character + comic page Home */
+  .transition {
+    width: 100%;
+    border-radius: 0.4rem;
+    opacity: 0.6;
+  }
 
-#searchButton {
-  width: 20%;
-  height: 30px !important;
-  background-color: #151b2a;
-  border: 1px solid #151b2a;
-  font-size: 1em;
-  color: white;
-  cursor: pointer;
-}
 
-#searchButton:hover {
-  background-color: #080c14;
-  border: 1px solid white;
-}
+  /* Bande titre slider Character and pages Character */
+  .overlayCharacter {
+    bottom: 1.8rem;
+    font-size: 0.65rem;
+    padding: 0.55rem;
+  }
 
-/* Personnalisation du composant Modal*/
-/* Personnalisation du composant Modal*/
-.modal-content {
-width: 60%;
-display: flex;
-margin-left: 20%;
+  #searchInput {
+    width: 80%;
+    height: 30px !important;
+    background-color: #080c14;
+    border: 1px solid #151b2a;
+    font-size: 1em;
+    padding-left: 30px;
+    color: white;
+  }
 
-}
+  #searchInput::placeholder {
+    color: white;
+  }
 
-/* Personnalisation du composant Modal*/
-.modal-content {
-width: 75%;
-}
+  #searchInput:focus {
+    background-color: #151b2a;
+    border: 1px solid #151b2a;
+    outline: none;
+    color: white;
+    padding-left: 30px;
+  }
 
-.modal-header {
-background: rgba(236, 29, 36, 1);
-border: 0;
-}
+  #searchButton {
+    width: 20%;
+    height: 30px !important;
+    background-color: #151b2a;
+    border: 1px solid #151b2a;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+  }
 
-.modal-title {
-color: white;
-font-size: 0.7rem;
-}
+  #searchButton:hover {
+    background-color: #080c14;
+    border: 1px solid white;
+  }
 
-.modal-body {
-padding: 0;
-}
 
-.modal-footer {
-border: 0;
-width: 100%;
-}
+  /* Personnalisation du composant Modal*/
+  .modal {
+    width: 75%;
+    left: 11%;
+  }
 
-.modalText {
-padding: 1rem;
-font-size: 0.5rem;
-margin-bottom: -1rem;
-}
+  .modal-title {
+    font-size: 1rem;
+  }
 
-.imgModal {
-width: 100%;
-margin: 0;
-}
+  .modal-body {
+    padding: 0;
+  }
 
-.heroesImg {
-display: flex;
-flex-direction: column;
-justify-content: center;
-}
+  .modal-footer {
+    border: 0;
+    width: 100%;
+    padding: 0.75rem 0 0.01rem 0;
+  }
 
-.modalFooter {
-display: flex;
-justify-content: center;
-}
+  .modalText {
+    padding: 1rem;
+    font-size: 0.5rem;
+    margin-bottom: -1rem;
+  }
 
-.btn {
-background-image: url("../images/btn_marvel.svg");
-background-repeat: no-repeat;
-background-size: contain;
-width: 4rem;
-height: 2rem;
-display: inline-block;
-font-weight: 400;
-padding-right: 1rem;
-padding-bottom: 1.5rem;
-font-size: 0.5rem;
-color: white;
-margin-left: 1rem;
-}
+  .imgModal {
+    width: 100%;
+    margin: 0;
+  }
 
-.btnGame {
-outline: none;
-margin-top: 8.5rem;
-}
+  .heroesImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.btn:hover {
-background-image: url("../images/btn_marvel_dark.svg");
-transition: 0.25s ease-in-out;
-color: rgb(86, 29, 36);
-outline: none;
-}
+  .btn {
+    background-image: url("../images/btn_marvel.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 4rem;
+    height: 2rem;
+    display: inline-block;
+    font-weight: 400;
+    padding-right: 1rem;
+    padding-bottom: 0.8rem;
+    font-size: 0.5rem;
+    color: white;
+    margin-left: 0.5rem;
+    border-radius:none;
+  }
 
-.modalBody {
-display: flex;
-}
+  .btnGame {
+    outline: none;
+    margin-top: 8.5rem;
+  }
+
+  .btn:hover {
+    background-image: url("../images/btn_marvel_dark.svg");
+    transition: 0.25s ease-in-out;
+    color: rgb(86, 29, 36);
+    outline: none;
+  }
+
+  .modalBody {
+    display: flex;
+  }
+
+
+  /* carousel Slider Slick */
+  .carouselSlider {
+    width: 100%;
+    padding-top: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .slick-list {
+    padding-bottom: 0.1rem;
+  }
+
+  .slick-disabled {
+    visibility: hidden;
+  }
+
+  .slick-prev {
+    left: -1.1rem;
+  }
+  .slick-next {
+    right: -0.1rem;
+  }
+
+  .slick-prev,
+  .slick-next {
+    visibility: hidden;
+  }
+
+  .slick-slide {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
 }
 
 
 /* Small screen GAME page */
-
-
 @media screen and (max-width: 770px) {
-  
-  
-  .ContainerFightersChoosen{
+  .containerFightersChoosen {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
-  
+
   .heroFight {
     width: calc(17.5rem / 2.5);
   }
 
-  .area{
+  .area {
     font-size: 2em;
   }
 
-  .btnGame{
+  .btnGame {
     width: 3.5rem;
     height: 1.8rem;
     padding: 0;
@@ -597,11 +596,11 @@ display: flex;
   .btn:hover {
     background-image: none;
     transition: none;
-    color:black;
+    color: black;
     outline: none;
   }
 
-  .ContainerAlliesandEnnemies{
+  .containerAlliesandEnnemies {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -610,30 +609,25 @@ display: flex;
     margin-right: 5%;
   }
 
-  .GameRules{
+  .gameRules {
     padding: 20px 5%;
   }
 
-  .ContainerFighters{
+  .containerFighters {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
+    margin:10px;
   }
 
-  .FightersList{
-    margin-bottom: 30px;
+  .fightersList {
+    margin-bottom: 50px;
   }
 
-  .transitionGame{
+  .transitionGame {
     width: 7rem;
     height: 7rem;
+    margin-top: 1rem;
   }
-
-
-
-  
 }
-
-
-

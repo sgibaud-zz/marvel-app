@@ -65,7 +65,7 @@ class ComicsCard extends React.Component {
 
                                         <picture className='transitionCharacter' key={i} id={id} description={description}
                                             onClick={() => this.clickCard(id, title, thumbnail, description)}  >
-                                            <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={title} className='heroesCard' />
+                                            <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={title} className='comicsCard' />
                                         </picture>
 
                                     ))}

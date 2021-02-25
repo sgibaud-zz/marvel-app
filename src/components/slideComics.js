@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Slider from 'react-slick';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Col } from 'react-bootstrap';
 import ModalComic from './modalComic';
 
 //import Fetch from './md5Fetch';
@@ -50,20 +50,31 @@ export default class SliderComics extends Component {
             infinite: false,
             speed: 350,
             slidesToShow: 4,
-            slidesToScroll: 3,
+            slidesToScroll: 1,
             cssEase: 'ease-in-out',
-            centerPadding: '5px',
             draggable: false,
             className: 'carouselSlider',
+            initialSlide:0,
             responsive: [
                 {
                     breakpoint: 1024,
                     settings: {
-                        slidesToShow: 3,
+                        slidesToShow: 4,
                         slidesToScroll: 2,
+                        initialSlide: 0,
                         infinite: false,
                         dots: false,
-
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 2,
+                        initialSlide: 0,
+                        infinite: false,
+                        dots: false,
+                        draggable: true
                     }
                 },
                 {
@@ -71,19 +82,36 @@ export default class SliderComics extends Component {
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 1,
-                        //centerPadding: '10px',
                         initialSlide: 0,
-                        centerMode: true
                     }
                 },
                 {
-                    breakpoint: 480,
+                    breakpoint: 540,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        initialSlide: 0,                       
+                        draggable: true
+                    }
+                },
+                {
+                    breakpoint: 415,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 1,
-                        centerPadding: '10px',
+                        initialSlide: 0,
                         infinite: false,
-                        dots: false
+                        dots: false,
+                        draggable: true
+                    }
+                },
+                {
+                    breakpoint: 376,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        initialSlide: 0,
+                        draggable: true                       
                     }
                 }
             ]
@@ -98,7 +126,7 @@ export default class SliderComics extends Component {
         return (
 
             <Container>
-                <Row>
+                
 
                     <h3 className='titleSlider'>{this.props.categorieTitle}</h3>
 
@@ -109,14 +137,14 @@ export default class SliderComics extends Component {
                                 .map(({ id, thumbnail, title }, i) => (
                                     <Col key={i} id={id} 
                                         onClick={() => this.clickComic(id, thumbnail, title)}>
-                                        <div className='transitionComic'>
+                                        <div className='transition'>
                                             <img src={`${thumbnail.path}.${thumbnail.extension}`}
-                                                alt={title} className='marvelCatComics' />
+                                                alt={title} className='marvelCatImg marveCatComics' />
                                         </div>
                                     </Col>
                                 ))}
                     </Slider>
-                </Row>
+       
 
                 <ModalComic
                     openModalComic={this.state.openModalComic}

@@ -31,7 +31,7 @@ class Enemies extends Component {
 
     return (
       <Row>
-        <div className="ContainerFighters">    
+        <div className="containerFighters">    
 
           {
             this.state.enemies != null &&

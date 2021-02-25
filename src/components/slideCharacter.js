@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import md5 from 'md5';
 import Slider from 'react-slick';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Col } from 'react-bootstrap';
 import MarvelModal from './modal';
 
 // import CSS
@@ -65,25 +65,16 @@ export default class SliderCharacter extends Component {
             infinite: false,
             speed: 350,
             slidesToShow: 4,
-            slidesToScroll: 3,
+            slidesToScroll: 1,
             cssEase: 'ease-in-out',
-            centerPadding: '5px',
             draggable: false,
             className: 'carouselSlider',
+            initialSlide:0,
             responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 2,
-                        infinite: false,
-                        dots: false,
-                    }
-                },
                 {
                     breakpoint: 1024,
                     settings: {
-                        slidesToShow: 3,
+                        slidesToShow: 4,
                         slidesToScroll: 2,
                         infinite: false,
                         dots: false,
@@ -96,6 +87,7 @@ export default class SliderCharacter extends Component {
                         slidesToScroll: 2,
                         infinite: false,
                         dots: false,
+                        draggable: true
                     }
                 },
                 {
@@ -103,36 +95,32 @@ export default class SliderCharacter extends Component {
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 1,
-                        initialSlide: 0,
-                        centerMode: true
                     }
                 },
                 {
                     breakpoint: 540,
                     settings: {
                         slidesToShow: 3,
-                        slidesToScroll: 1,
-                        initialSlide: 0,
-                        centerMode: true
+                        slidesToScroll: 1,                       
+                        draggable: true
                     }
                 },
                 {
-                    breakpoint: 411,
+                    breakpoint: 415,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 1,
-                        centerPadding: '10px',
                         infinite: false,
-                        dots: false
+                        dots: false,
+                        draggable: true
                     }
                 },
                 {
-                    breakpoint: 375,
+                    breakpoint: 376,
                     settings: {
-                        slidesToShow: 3,
+                        slidesToShow: 2,
                         slidesToScroll: 1,
-                        initialSlide: 0,
-                        centerMode: true
+                        draggable: true                       
                     }
                 }
             ]
@@ -147,7 +135,7 @@ export default class SliderCharacter extends Component {
         return (
 
             <Container>
-                <Row>
+                
 
                     <h3 className='titleSlider'>{this.props.categorieTitle}</h3>
 
@@ -164,6 +152,7 @@ export default class SliderCharacter extends Component {
                                                 className='marvelCatImg' />
                                             <h4 className='overlay'>{name}</h4>
                                         </div>
+                                        
                                     </Col>
                                 ))}
                     </Slider>
@@ -177,7 +166,7 @@ export default class SliderCharacter extends Component {
                         description={this.state.description}
                     />
 
-                </Row>
+               
             </Container>
         );
     }

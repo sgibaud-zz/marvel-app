@@ -102,7 +102,7 @@ class Comics extends Component {
             .map(({id, thumbnail, title}, i) => (
               <picture className='transitionCharacter' key={i} id={id}
               onClick={() => this.clickCard(id, title, thumbnail)} >
-                <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={title} className='heroesCard' />
+                <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={title} className='comicsCard' />
                </picture>                       
             ))
         }

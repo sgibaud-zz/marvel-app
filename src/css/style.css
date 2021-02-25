@@ -8,7 +8,7 @@
   background-image: url("../images/logo_marvel.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  width: 6rem;
+  width: 10rem;
   height: 2.4rem;
   align-self: center;
   padding: 0;
@@ -148,3 +148,10 @@
       0px -10px 100px #7B96B8;
   }
 }
+
+
+@media (max-width: 1024px) {
+  .logo {
+    margin-left: calc(1rem / 1.2);
+  }
+ }

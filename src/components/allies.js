@@ -31,7 +31,7 @@ class Allies extends Component {
 
     return (
       <Row>
-        <div className="ContainerFighters">    
+        <div className="containerFighters">    
           
             {
               this.state.allies != null &&
