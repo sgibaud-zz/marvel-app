@@ -31,13 +31,17 @@ class Enemies extends Component {
 
     return (
       <Row>
-        <div className="containerFighters">    
+        <div className="containerFighters">
 
           {
             this.state.enemies != null &&
-            this.state.enemies.map(({ image, durability, strength, id, energy }, i) =>
-              <div className="FightersList">
-                <img key={i} id={id} className="transitionGame" onClick={() => this.props.saveChoice2(image, durability, strength)} src={image} alt='' />
+            this.state.enemies.map(({ image, durability, strength, id, lifeEnemi }, i) =>
+              <div>
+                <img key={i} id={id} className="transitionGame" onClick={() => this.props.saveChoice2(image, strength, lifeEnemi)} src={image} alt='' />
+                <Row className='characteristic'>
+                  <h5 className='characteristicBase'>Skill: {strength}</h5>
+                  <h5 className='characteristicBase'>Life: {durability}</h5>
+                </Row>
               </div>
             )
           }

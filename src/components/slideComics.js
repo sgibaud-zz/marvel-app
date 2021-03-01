@@ -48,22 +48,19 @@ export default class SliderComics extends Component {
         const settings = {
             dots: false,
             infinite: false,
-            speed: 350,
+            speed: 400,
             slidesToShow: 4,
-            slidesToScroll: 1,
+            slidesToScroll: 2,
             cssEase: 'ease-in-out',
             draggable: false,
             className: 'carouselSlider',
-            initialSlide:0,
+            initialSlide: 0,
             responsive: [
                 {
                     breakpoint: 1024,
                     settings: {
                         slidesToShow: 4,
                         slidesToScroll: 2,
-                        initialSlide: 0,
-                        infinite: false,
-                        dots: false,
                     }
                 },
                 {
@@ -71,10 +68,7 @@ export default class SliderComics extends Component {
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 2,
-                        initialSlide: 0,
-                        infinite: false,
-                        dots: false,
-                        draggable: true
+                        draggable: true, 
                     }
                 },
                 {
@@ -82,7 +76,7 @@ export default class SliderComics extends Component {
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 1,
-                        initialSlide: 0,
+                        draggable: true, 
                     }
                 },
                 {
@@ -90,30 +84,19 @@ export default class SliderComics extends Component {
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 1,
-                        initialSlide: 0,                       
-                        draggable: true
+                        draggable: true, 
                     }
                 },
                 {
-                    breakpoint: 415,
+                    breakpoint: 416,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 1,
-                        initialSlide: 0,
-                        infinite: false,
-                        dots: false,
-                        draggable: true
+                        draggable: true,
+                        infinite: true, 
                     }
                 },
-                {
-                    breakpoint: 376,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        initialSlide: 0,
-                        draggable: true                       
-                    }
-                }
+
             ]
         };
 

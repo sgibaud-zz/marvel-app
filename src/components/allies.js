@@ -31,19 +31,23 @@ class Allies extends Component {
 
     return (
       <Row>
-        <div className="containerFighters">    
-          
-            {
-              this.state.allies != null &&
-              this.state.allies.map(({image, durability, strength, id, energy}, i) =>
-                <div className="FightersList">
-                  <img className="transitionGame" id={id}
-                    onClick={() => this.props.saveChoice1(image, durability, strength)} src={image}
-                    key={i} alt='' />
-                </div>
-              )
-            }
-        
+        <div className="containerFighters">
+
+          {
+            this.state.allies != null &&
+            this.state.allies.map(({ image, durability, strength, id, lifeHero }, i) =>
+              <div>
+                <img className="transitionGame" id={id}
+                  onClick={() => this.props.saveChoice1(image, strength, lifeHero)} src={image}
+                  key={i} alt='' />
+                <Row className='characteristic'>
+                  <h5 className='characteristicBase'>Skill: {strength}</h5>
+                  <h5 className='characteristicBase'>Life: {durability}</h5>
+                </Row>
+              </div>
+            )
+          }
+
         </div>
       </Row >
     )

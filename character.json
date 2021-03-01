@@ -5,56 +5,61 @@
                 "id": 10,
                 "name": "Black Panther",
                 "durability": 3,
+                "lifeHero": 100,
                 "energy": 3,
                 "fighting skills": 5,
                 "intelligence": 5,
                 "speed": 2,
                 "strength": 3,
-                "image": "http://graphisme.draconic-graphisme.com/marvel/blackpanther.jpg"
+                "image": "http://wildcodeschool.draconic-graphisme.com/marvel/blackpanther.jpg"
             },
             {
                 "id": 20,
                 "name": "hulk",
                 "durability": 7,
+                "lifeHero": 100,
                 "energy": 5,
                 "fighting skills": 4,
                 "intelligence": 6,
                 "speed": 3,
                 "strength": 7,
-                "image": "http://graphisme.draconic-graphisme.com/marvel/hulk.jpg"
+                "image": "http://wildcodeschool.draconic-graphisme.com/marvel/hulk.jpg"
             },
             {
                 "id": 30,
                 "name": "Iron Man",
                 "durability": 6,
+                "lifeHero": 100,
                 "energy": 6,
                 "fighting skills": 4,
                 "intelligence": 6,
                 "speed": 5,
                 "strength": 6,
-                "image": "http://graphisme.draconic-graphisme.com/marvel/ironman.jpg"
+                "image": "http://wildcodeschool.draconic-graphisme.com/marvel/ironman.jpg"
             },
             {
                 "id": 40,
                 "name": "Silver Surfer",
                 "durability": 7,
+                "lifeHero": 100,
                 "energy": 7,
                 "fighting skills": 5,
                 "intelligence": 4,
                 "speed": 7,
                 "strength": 6,
-                "image": "http://graphisme.draconic-graphisme.com/marvel/silversurfer.jpg"
+                "image": "http://wildcodeschool.draconic-graphisme.com/marvel/silversurfer.jpg"
             },
             {
                 "id": 50,
                 "name": "Thor",
                 "durability": 6,
+                "lifeHero": 100,
                 "energy": 6,
                 "fighting skills": 4,
                 "intelligence": 2,
                 "speed": 7,
                 "strength": 7,
-                "image": "http://graphisme.draconic-graphisme.com/marvel/thor.jpg"
+                "image": "http://wildcodeschool.draconic-graphisme.com/marvel/thor.jpg"
             }
         ],
         "enemies": [
@@ -62,56 +67,61 @@
                 "id": 60,
                 "name": "Galactus",
                 "durability": 7,
+                "lifeEnemi": 100,
                 "energy": 7,
                 "fighting skills": 7,
                 "intelligence": 7,
                 "speed": 7,
                 "strength": 7,
-                "image": "http://graphisme.draconic-graphisme.com/marvel/galactus.jpg"
+                "image": "http://wildcodeschool.draconic-graphisme.com/marvel/galactus.jpg"
             },
             {
                 "id": 70,
                 "name": "Loki",
                 "durability": 6,
+                "lifeEnemi": 100,
                 "energy": 6,
                 "fighting skills": 3,
                 "intelligence": 5,
                 "speed": 7,
                 "strength": 5,
-                "image": "http://graphisme.draconic-graphisme.com/marvel/loki.jpg"
+                "image": "http://wildcodeschool.draconic-graphisme.com/marvel/loki.jpg"
             },
             {
                 "id": 80,
                 "name": "Thanos",
                 "durability": 6,
+                "lifeEnemi": 100,
                 "energy": 6,
                 "fighting skills": 4,
                 "intelligence": 6,
                 "speed": 7,
                 "strength": 7,
-                "image": "http://graphisme.draconic-graphisme.com/marvel/thanos.jpg"
+                "image": "http://wildcodeschool.draconic-graphisme.com/marvel/thanos.jpg"
             },
             {
                 "id": 90,
                 "name": "Ultron",
                 "durability": 7,
+                "lifeEnemi": 100,
                 "energy": 6,
                 "fighting skills": 4,
                 "intelligence": 4,
                 "speed": 3,
                 "strength": 6,
-                "image": "http://graphisme.draconic-graphisme.com/marvel/ultron.jpg"
+                "image": "http://wildcodeschool.draconic-graphisme.com/marvel/ultron.jpg"
             },
             {
                 "id": 100,
                 "name": "Venom",
                 "durability": 4,
+                "lifeEnemi": 100,
                 "energy": 1,
                 "fighting skills": 2,
                 "intelligence": 2,
                 "speed": 3,
                 "strength": 4,
-                "image": "http://graphisme.draconic-graphisme.com/marvel/venom.jpg"
+                "image": "http://wildcodeschool.draconic-graphisme.com/marvel/venom.jpg"
             }
         ]
     }

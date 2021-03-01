@@ -22,7 +22,7 @@ class MarvelModal extends React.Component {
         </ModalBody >
 
         <ModalFooter className="modalFooter">
-          <button className="btn" onClick={this.props.closeModalCharacter} >Close</button>
+          <div className="btn" onClick={this.props.closeModalCharacter} >Close</div>
         </ModalFooter>
 
       </Modal>

@@ -12,12 +12,9 @@ function Footer() {
     return (
         <footer id='footerMargin'>
             <Container>
-                <picture className='logo logoResponsive'></picture>
+                <picture className='logoFooter'></picture>
                 <Row lg={8} xs={12}>
-                    <Col className='footerCol' lg={2} xs={12}><a href='#'>Conditions d'utilisation</a></Col>
-                    <Col className='footerCol' lg={2} xs={12}><a href='#'>Donnez-nous votre avis</a></Col>
-                    <Col className='footerCol' lg={1} xs={12}><a href='#'>Aide</a></Col>
-                    <Col className='footerCol' lg={3} xs={12}>Data provided by Marvel. © 2021 MARVEL</Col>
+                    <Col className='footerCol' lg={2} xs={12}><a href='https://marvel.com' target="_blank" rel='noreferrer'>Data provided by Marvel. © 2021 MARVEL</a></Col>
                     <Col className='footerCol' lg={2} xs={12}>M-E-S, Inc. ou ses filiales. © 2020-2021</Col>
                 </Row>
             </Container>
