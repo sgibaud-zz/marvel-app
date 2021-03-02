@@ -22,7 +22,7 @@ class ModalComic extends React.Component {
         </ModalBody >
         
         <ModalFooter className="modalFooter">
-          <button className="btn" onClick={this.props.closeModalComic} >Close</button>
+          <button className="btn btnComic" onClick={this.props.closeModalComic} >Close</button>
         </ModalFooter>
 
       </Modal>

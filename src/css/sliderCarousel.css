@@ -175,7 +175,7 @@
 }
 
 .slick-track {
-  left: -0.35rem;
+  left: -0.05rem;
 }
 
 .slick-list {
@@ -210,16 +210,15 @@
   margin-top: 1.75rem;
 }
 
-.slick-next {
+/*.slick-next {
   right: -0.75rem;
-}
+}*/
 
 /* Titre slider and pages */
 .titleSlider {
   font-size: 1.3rem;
   justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  margin-top: 0.5rem;
 }
 
 /* Pages Character and Comics */
@@ -253,7 +252,7 @@
 .modal {
   width:25%;
   top: 4%;
-  left: 37%;
+  left: 38%;
 }
 
 .modal-header {
@@ -264,6 +263,10 @@
 
 .modal-title {
   color: white;
+}
+
+.modal-content {
+  width: 90%;
 }
 
 .modal-body {
@@ -304,6 +307,10 @@
   font-size: 1rem;
   color: white;
   margin: 0 0 0 1.25rem;
+}
+
+.btnComic {
+  padding-top: 0.2rem;
 }
 
 .btn:hover {
