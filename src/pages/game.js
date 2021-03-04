@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import { Container, Row, ProgressBar } from 'react-bootstrap';
+import { Container, Row, ProgressBar, Col } from 'react-bootstrap';
 import Allies from '../components/allies';
 import Enemies from '../components/enemies';
 import Footer from '../components/footer';
 import NavBar from "../components/NavBar";
 import SideNavBar from "../components/SideNavBar";
+import ModalRule from '../components/modalRule';
 
 import Fight from "../images/futur.png"
 
 import '../css/searchBarstyle.css';
 import '../css/sliderCarousel.css';
 import '../css/style.css';
+
 
 
 class Game extends Component {
@@ -24,7 +26,7 @@ class Game extends Component {
       dead: 'http://wildcodeschool.draconic-graphisme.com/marvel/dead.gif',
       winner: "http://wildcodeschool.draconic-graphisme.com/marvel/gif-deadpool-2.gif",
       sideBarOpen: false,
-      openModal: false,
+
       lifeHero: '',
       lifeEnemi: ''
     };
@@ -32,15 +34,22 @@ class Game extends Component {
 
   //function d'état lié aux composants allies.js et enemies.js
   saveChoice1 = (image, strengthHero, lifeHero) => {
-    this.setState({ choice1: image, strengthHero: strengthHero, lifeHero: lifeHero});
+    this.setState({ choice1: image, strengthHero: strengthHero, lifeHero: lifeHero });
   }
 
   saveChoice2 = (image, strengthEnemie, lifeEnemi) => {
-    this.setState({ choice2: image, strengthEnemie: strengthEnemie, lifeEnemi: lifeEnemi});
+    this.setState({ choice2: image, strengthEnemie: strengthEnemie, lifeEnemi: lifeEnemi });
     //alert(`${this.state.lifeEnemi}`);
 
   }
 
+  modal() {
+    this.setState({ openModal: true });
+  }
+
+  closeModal = () => {
+    this.setState({ openModal: false });
+  }
 
 
   handleOpen = () => {
@@ -84,7 +93,7 @@ class Game extends Component {
   render() {
 
     //variable pour initialiser le this.state
-    const { choice1, choice2, dead, lifeEnemi, lifeHero, sideBarOpen } = this.state;
+    const { choice1, choice2, dead, lifeEnemi, lifeHero, sideBarOpen, openModal } = this.state;
 
     return (
       <>
@@ -99,8 +108,10 @@ class Game extends Component {
 
             <div className="titleGame">
               <img className="imageGame" src={Fight} alt='picto fight' />
+              <div className='gameRules btn-center'>
+                <div className="btn-rule" onClick={() => this.modal()}>Règle du jeu</div>
+              </div>
             </div>
-
 
 
 
@@ -110,7 +121,7 @@ class Game extends Component {
               <div className="containerFightersChoosen">
 
                 <div className='heroCard'>
-                  {/*<progress className="file" max="100" value="100"></progress>*/}
+                  <h4 className='titleSlider'> LES ALLIÉS</h4>
                   <Row className='rowProgressBar'>
                     <h4 className='titleProgressBar'>HP: </h4>
                     <ProgressBar className='progressBar' animated now={lifeHero} />
@@ -123,6 +134,7 @@ class Game extends Component {
 
                 {/* Enemies : Card qui affiche les points de vie ou null et condition suite état combat win or lose */}
                 <div className='heroCard'>
+                  <h4 className='titleSlider'>LES ENNEMIS</h4>
                   <Row className='rowProgressBar'>
                     <h4 className='titleProgressBar'>HP: </h4>
                     <ProgressBar className='progressBar' animated now={lifeEnemi} />
@@ -134,28 +146,22 @@ class Game extends Component {
 
             </Row>
 
-            <div className="gameRules">
-              <h4 className="rulestitle">RÈGLES DU JEU</h4>
-              <p className="rules">Choisis <strong>1 ALLIÉ</strong> et <strong>1 ENNEMI</strong> pour les faire combattre en cliquant sur le bouton <strong>FIGHT</strong>.<br/> 
-              Cliques autant de fois sur <strong>FIGHT</strong> pour faire combattre les personnages, jusqu'à ce que la barre de vie arrive à 0.<br />
-              Une fois le combat fini, tu peux choisir de nouveaux combattants.</p>
-            </div>
-
             {/* Card heros and enemies */}
+            <Row>
 
-            <div className="containerAlliesandEnnemies">
+                <Col>
+                  <Allies saveChoice1={this.saveChoice1} />
+                </Col>
 
-              <div>
-                <h4 className='titleSlider'> LES ALLIÉS</h4>
-                <Allies saveChoice1={this.saveChoice1} />
-              </div>
+                <Col>
+                  <Enemies saveChoice2={this.saveChoice2} />
+                </Col>
+              
+            </Row>
 
-              <div>
-                <h4 className='titleSlider'>LES ENNEMIS</h4>
-                <Enemies saveChoice2={this.saveChoice2} />
-              </div>
-            </div>
-
+            <ModalRule
+              openModal={openModal}
+              closeModal={this.closeModal} />
           </>
         </Container>
 

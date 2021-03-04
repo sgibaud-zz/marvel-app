@@ -60,6 +60,18 @@
                 "speed": 7,
                 "strength": 7,
                 "image": "http://wildcodeschool.draconic-graphisme.com/marvel/thor.jpg"
+            },
+            {
+                "id": 110,
+                "name": "Vision",
+                "durability": 6,
+                "lifeHero": 100,
+                "energy": 6,
+                "fighting skills": 3,
+                "intelligence": 4,
+                "speed": 3,
+                "strength": 5,
+                "image": "http://wildcodeschool.draconic-graphisme.com/marvel/vision.jpg"
             }
         ],
         "enemies": [
@@ -122,6 +134,18 @@
                 "speed": 3,
                 "strength": 4,
                 "image": "http://wildcodeschool.draconic-graphisme.com/marvel/venom.jpg"
+            },
+            {
+                "id": 120,
+                "name": "Immortus",
+                "durability": 4,
+                "lifeEnemi": 100,
+                "energy": 5,
+                "fighting skills": 0,
+                "intelligence": 4,
+                "speed": 7,
+                "strength": 2,
+                "image": "http://wildcodeschool.draconic-graphisme.com/marvel/immortus.jpg"
             }
         ]
     }

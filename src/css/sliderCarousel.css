@@ -43,37 +43,29 @@
 
 /* Page Game */
 .titleGame {
-  margin: 0 auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  margin-bottom: 20px;
+  flex-direction: column;
+  width: 100%;
 }
 
 .imageGame {
-  width: 1026px;
-  height: auto;
-  border-radius: 0.4rem;
-  margin-bottom: 5%;
+  border-radius: 0.4rem 0.4rem 0 0;
 }
 
 .gameRules {
-  background-color: #0d121d;
-  padding: 20px 10%;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 30px auto;
-  border-radius: 0.4rem;
+  background-color: #0e1420;
+  padding: 1rem 10%;
+  border-radius: 0 0 0.4rem 0.4rem;
 }
 
 .rules {
-  color: white;
   font-size: 0.8em;
   text-align: center;
+}
+
+.space-para {
+  margin-bottom: 2%;
+  padding: 0 1rem;
 }
 
 .rulestitle {
@@ -87,14 +79,22 @@
   align-items: center;
 }
 
-.containerFighters {
+.containerFightersHero {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
+.containerFightersEnemi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
 
 .transitionGame {
   border-radius: 0.4rem;
   margin: 0 1rem;
+  width: 85%;
 }
 
 .transitionGame:hover {
@@ -112,6 +112,10 @@
   margin: 0.5rem 0 1.5rem 0;
 }
 
+.col {
+  padding: 0 2rem;
+}
+
 .progressBar {
   width: 77%;
   align-self: center;
@@ -126,7 +130,7 @@
 
 .characteristic {
   justify-content: space-between;
-  margin: 0 0.65rem;
+  margin: 0 0.85rem;
 }
 
 .characteristicBase {
@@ -250,7 +254,7 @@
 
 /* Personnalisation du composant Modal*/
 .modal {
-  width:25%;
+  width: 25%;
   top: 4%;
   left: 38%;
 }
@@ -309,14 +313,38 @@
   margin: 0 0 0 1.25rem;
 }
 
-.btnComic {
-  padding-top: 0.2rem;
-}
-
 .btn:hover {
   background-image: url("../images/btn_marvel_dark.svg");
   transition: 0.25s ease-in-out;
   color: rgb(86, 29, 36);
+}
+
+.btn-rule {
+  background-image: url("../images/btn_marvel.svg");
+  background-repeat: no-repeat;
+  width: 10rem;
+  height: 3rem;
+  font-weight: 400;
+  padding: 0.75rem 1.25rem 0 1.85rem;
+  font-size: 1rem;
+  color: white;
+  margin: 0 0 0 1.25rem;
+}
+
+.btn-rule:hover {
+  background-image: url("../images/btn_marvel_dark.svg");
+  transition: 0.25s ease-in-out;
+  color: rgb(86, 29, 36);
+}
+
+.btn-center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3%;
+}
+
+.btnComic {
+  padding-top: 0.2rem;
 }
 
 .modalBody {
@@ -461,14 +489,20 @@
     border: 1px solid white;
   }
 
-/* image carousel game */
-.imageGame {
-  width: 100%;
-
-}
-
+  /* image carousel game */
+  .titleGame {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    margin: 0 auto;
+  }
 
   /* Personnalisation du composant Modal*/
+  .modal {
+    width: 75%;
+    top: 4%;
+    left: 14%;
+  }
 
   .modal-title {
     font-size: 1rem;
@@ -481,13 +515,16 @@
   .modal-footer {
     border: 0;
     width: 100%;
-    padding: 0.75rem 0 0.01rem 0;
   }
 
   .modalText {
     padding: 1rem;
-    font-size: 0.85rem;
-    margin-bottom: -1rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .space-para {
+    font-size: 0.8rem;
   }
 
   .imgModal {
@@ -511,7 +548,7 @@
     background-image: url("../images/btn_marvel.svg");
     background-repeat: no-repeat;
     width: calc(10rem / 1.4);
-    height: calc(3rem /1.4);
+    height: calc(3rem / 1.4);
     padding: 0.3rem 0.9rem 0 0;
     font-size: 1rem;
     color: white;
@@ -522,6 +559,28 @@
     background-image: url("../images/btn_marvel_dark.svg");
     color: rgb(86, 29, 36);
     outline: none;
+  }
+
+  .btn-rule {
+    width: calc(10rem / 1.2);
+    height: calc(3rem / 1.2);
+    font-weight: 400;
+    padding: 0.5rem 0 0 1.15rem;
+    font-size: 1rem;
+    color: white;
+    margin: 0 0 0 1.25rem;
+  }
+
+  .btn-rule:hover {
+    background-image: url("../images/btn_marvel_dark.svg");
+    transition: 0.25s ease-in-out;
+    color: rgb(86, 29, 36);
+  }
+
+  .btn-center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
   }
 
   .modalBody {
@@ -559,6 +618,15 @@
     padding: 0 !important;
     margin: 0 !important;
   }
+
+  .heroFight {
+    width: calc(17.5rem / 1.25);
+  }
+
+  .transitionGame {
+    margin-top: 1rem;
+    width: 90%;
+  }
 }
 
 /* Small screen GAME page */
@@ -571,7 +639,7 @@
   }
 
   .heroFight {
-    width: calc(17.5rem / 2.5);
+    width: calc(17.5rem / 2.25);
   }
 
   .area {
@@ -600,30 +668,27 @@
     outline: none;
   }
 
-  .containerAlliesandEnnemies {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-
   .gameRules {
-    padding: 20px 5%;
+    padding: 0.8rem 5%;
+    margin: 0 auto;
+    width: 100%;
   }
 
-  .containerFighters {
+  .containerFightersHero {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     flex-wrap: wrap;
-    margin: 1rem;
-    width: 100%;
+  }
+  
+  .containerFightersEnemi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 
   .transitionGame {
     margin-top: 1rem;
+    width: 80%;
   }
 
   .progressBar {
