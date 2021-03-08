@@ -59,14 +59,14 @@ class Comics extends Component {
   };
 
   //function d'état lié au map après l'appel du searchComic
-  clickCard(id, title, thumbnail, description) {
-    this.clickComic(id, title, thumbnail.path + '.' + thumbnail.extension, description);
+  clickCard(id, title, thumbnail, urls) {
+    this.clickComic(id, title, thumbnail.path + '.' + thumbnail.extension, urls[0].url);
   }
 
 
   //function d'état lié au composant slideComic
-  clickComic(id, title, thumbnail) {
-    this.setState({ openModalComic: true, comicId: id, title: title, comicImg: thumbnail});
+  clickComic(id, title, thumbnail, urls) {
+    this.setState({ openModalComic: true, comicId: id, title: title, comicImg: thumbnail, urls: urls});
   }
 
   closeModalComic = () => {
@@ -99,9 +99,9 @@ class Comics extends Component {
           this.state.researchResult != null &&
           this.state.researchResult
             .filter(image => image.thumbnail.path !== noImage && image.thumbnail.path !== noGif && image.description !== '')
-            .map(({id, thumbnail, title}, i) => (
-              <picture className='transitionCharacter' key={i} id={id}
-              onClick={() => this.clickCard(id, title, thumbnail)} >
+            .map(({id, thumbnail, title, urls}, i) => (
+              <picture className='transitionCharacter' key={i} id={id} urls={`${urls[0].url}`}
+              onClick={() => this.clickCard(id, title, thumbnail, urls)} >
                 <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={title} className='comicsCard' />
                </picture>                       
             ))
@@ -115,8 +115,8 @@ class Comics extends Component {
 
         {
           this.state.isContentshow === true &&
-          <ComicsCard cardTitle="Les comics Marvel"
-          onClickCard={(id, title, thumbnail) => this.clickComic(id, title, thumbnail.path + '.' + thumbnail.extension)} />
+          <ComicsCard cardTitle="Marvel Comics"
+          onClickCard={(id, title, thumbnail, urls) => this.clickComic(id, title, thumbnail.path + '.' + thumbnail.extension, urls[0].url)} />
         }
 
 
@@ -126,6 +126,7 @@ class Comics extends Component {
           comicId={this.state.comicId}
           title={this.state.title}
           comicImg={this.state.comicImg}
+          urls ={this.state.urls}
         />
 
         <Footer />

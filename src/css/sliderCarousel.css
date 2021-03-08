@@ -18,12 +18,14 @@
 .marvelCatImg:hover {
   box-shadow: 0px 0px 0px 0.125rem #ffffff;
   transition: 0.5s linear !important;
+  cursor: pointer;
 }
 
 .transition:hover {
   transform: scale(1.05);
   transition: 0.5s linear !important;
   opacity: 1;
+  cursor: pointer;
 }
 
 /*hover page Character and Comics */
@@ -39,6 +41,7 @@
   box-shadow: 0px 0px 0px 0.125rem rgba(255, 255, 255, 1);
   transform: scale(1.05);
   transition: 0.5s linear !important;
+  cursor: pointer;
 }
 
 /* Page Game */
@@ -53,7 +56,6 @@
 }
 
 .gameRules {
-  background-color: #0e1420;
   padding: 1rem 10%;
   border-radius: 0 0 0.4rem 0.4rem;
 }
@@ -101,6 +103,7 @@
   box-shadow: 0px 0px 0px 0.125rem rgba(255, 255, 255, 1);
   transform: scale(1.05);
   transition: 0.5s linear !important;
+  cursor: pointer;
 }
 
 .heroFight {
@@ -134,7 +137,7 @@
 }
 
 .characteristicBase {
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   margin-top: 3%;
   color: rgba(236, 29, 36, 0.65);
 }
@@ -285,6 +288,17 @@
   padding: 1rem;
 }
 
+a {
+  text-decoration: none;
+  color: #79b8f3;
+}
+
+
+.modalText > a:hover {
+  text-decoration: none;
+  
+}
+
 .imgModal {
   width: 100%;
   margin: 0;
@@ -317,6 +331,7 @@
   background-image: url("../images/btn_marvel_dark.svg");
   transition: 0.25s ease-in-out;
   color: rgb(86, 29, 36);
+  cursor: pointer;
 }
 
 .btn-rule {
@@ -335,6 +350,7 @@
   background-image: url("../images/btn_marvel_dark.svg");
   transition: 0.25s ease-in-out;
   color: rgb(86, 29, 36);
+  cursor: pointer;
 }
 
 .btn-center {
@@ -396,6 +412,7 @@
 #searchButton:hover {
   background-color: #080c14;
   border: 1px solid white;
+  cursor: pointer;
 }
 
 #noResult {
@@ -407,6 +424,10 @@
 /* Media Query */
 /* 375 411 540 680 768 1024 */
 @media (max-width: 1024px) {
+.title-page {
+  margin-bottom: 0.5rem;
+}
+
   .titleSlider {
     font-size: calc(1.3rem / 1.4);
   }
@@ -487,6 +508,7 @@
   #searchButton:hover {
     background-color: #080c14;
     border: 1px solid white;
+    cursor: pointer;
   }
 
   /* image carousel game */
@@ -521,6 +543,7 @@
     padding: 1rem;
     font-size: 0.9rem;
     margin-bottom: 0.25rem;
+    text-decoration-line: none;
   }
 
   .space-para {
@@ -631,6 +654,11 @@
 
 /* Small screen GAME page */
 @media screen and (max-width: 770px) {
+  .margin-card {
+    margin-top: 1rem;
+  }
+
+
   .containerFightersChoosen {
     display: flex;
     flex-direction: row;

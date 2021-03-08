@@ -15,7 +15,7 @@ function Footer() {
                 <picture className='logoFooter'></picture>
                 <Row lg={8} xs={12}>
                     <Col className='footerCol' lg={2} xs={12}><a href='https://marvel.com' target="_blank" rel='noreferrer'>Data provided by Marvel. © 2021 MARVEL</a></Col>
-                    <Col className='footerCol' lg={2} xs={12}>M-E-S, Inc. ou ses filiales. © 2020-2021</Col>
+                    <Col className='footerCol' lg={2} xs={12}>M-E-S, Inc. or its subsidiaries. © 2020-2021</Col>
                 </Row>
             </Container>
         </footer>

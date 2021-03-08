@@ -30,7 +30,7 @@ export default class SliderComics extends Component {
         const hash = md5(timestamp + API_PRIVATE_KEY + API_PUBLIC_KEY);
 
         // appel du fetch 
-        fetch(`https://gateway.marvel.com/v1/public/comics?format=comic&hasDigitalIssue=false&ts=${timestamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
+        fetch(`https://gateway.marvel.com/v1/public/comics?hasDigitalIssue=false&ts=${timestamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
             .then(resp => resp.json())
             .then(data => this.setState({comics:data.data.results}));
     }

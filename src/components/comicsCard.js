@@ -37,8 +37,8 @@ class ComicsCard extends React.Component {
 
     //Initialisation de la function clickCard.
     //ClickCard appelle la function onClickCard qui fait passer des informations via les paramètres de la function vers le composant parent (comics.js).
-    clickCard(id, name, thumbnail, description) {
-        this.props.onClickCard(id, name, thumbnail, description);
+    clickCard(id, name, thumbnail, urls) {
+        this.props.onClickCard(id, name, thumbnail, urls);
     }
 
     render() {
@@ -56,16 +56,16 @@ class ComicsCard extends React.Component {
                     <div>
                         <h3 className="titleSlider textCenter">{this.props.cardTitle}</h3>
 
-                        <div className="cardContainer">
+                        <div className="cardContainer margin-card">
 
                             {
                                 this.state.comics
-                                    .filter(image => image.thumbnail.path !== noImage && image.thumbnail.path !== noGif && image.description !== '')
-                                    .map(({ id, thumbnail, title, description }, i) => (
-
-                                        <picture className='transitionCharacter' key={i} id={id} description={description}
-                                            onClick={() => this.clickCard(id, title, thumbnail, description)}  >
+                                    .filter(image => image.thumbnail.path !== noImage && image.thumbnail.path !== noGif)
+                                    .map(({id, thumbnail, title, urls}, i) => (
+                                        <picture className='transitionCharacter' key={i} id={id} urls={`${urls[0].url}`}
+                                            onClick={() => this.clickCard(id, title, thumbnail, urls)}  >
                                             <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={title} className='comicsCard' />
+                                    
                                         </picture>
 
                                     ))}

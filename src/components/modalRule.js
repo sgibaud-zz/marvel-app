@@ -14,25 +14,25 @@ export default class ModalRule extends React.Component {
       <Modal show={this.props.openModal}  >
 
         <ModalHeader>
-          <ModalTitle >Règle du jeu</ModalTitle>
+          <ModalTitle >Game rules</ModalTitle>
         </ModalHeader>
 
         <ModalBody>
           <img className="imgModal" src={Marvel} alt='combattant Marvel' />        
-            <p className="modalText">Le combat se passe sur plusieurs tours jusqu'à la défaite d'un des 2 'héros'.</p> 
+            <p className="modalText">The fight happens in several rounds until one of the fighters looses.</p> 
             <p className="space-para">
               <strong>1. </strong>
-              Choisis <strong>1 ALLIÉ</strong> et <strong>1 ENNEMI</strong>.
+              Pick <strong>1 ALLY</strong> and <strong>1 ENEMY</strong>.
               </p>
               <p className="space-para">
-            <strong>2. </strong>Cliques autant de fois sur <strong>FIGHT</strong> pour réduire la barre de vie de chacun des personnages jusqu'à ce que la barre celle-ci arrive à 0.
+            <strong>2. </strong>Press the <strong>FIGHT</strong> button several times until <strong>the health bar of one of the two fighters is empty FIGHT</strong>.
              </p>
              <p className="space-para">
-             <strong>3. </strong>Recommences le jeu en choississant de nouveaux combattants.
+             <strong>3. </strong>Choose new fighters to play again.
              </p>
              <p className="space-para">
-             <strong>Fighting skills : </strong>force de combat du 'héro'.<br />
-             <strong>Life : </strong>point de vie du 'héro'.<br />
+             <strong>Fighting skills:</strong> strengths and skills of the fighter.<br />
+             <strong>Life : </strong>number of lives of the fighter.<br />
              </p>        
         </ModalBody >
 

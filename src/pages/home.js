@@ -46,8 +46,8 @@ class Home extends Component {
         </div>
         <HeroCarousel />
 
-        <SliderCharacter categorieTitle="Les personnages" />
-        <SliderComics categorieTitle="Les comics" />
+        <SliderCharacter categorieTitle="Marvel Characters" />
+        <SliderComics categorieTitle="Marvel Comics" />
 
         <Footer />
         

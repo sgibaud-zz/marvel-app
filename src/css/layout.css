@@ -37,6 +37,7 @@
   text-shadow: 1px 1px #ff0000;
   color: white;
   text-decoration: inherit;
+  cursor: pointer;
 }
 
 .nav-space {
@@ -93,6 +94,7 @@ nav, .side-nav-bar a {
   text-shadow: 1px 1px #ff0000;
   color: white;
   text-decoration: inherit;
+  cursor: pointer;
 }
 
 

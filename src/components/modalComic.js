@@ -19,6 +19,8 @@ class ModalComic extends React.Component {
 
         <ModalBody>
           <img className="imgModal" src={this.props.comicImg} alt={this.props.title} />
+          <a href={this.props.urls} target='_blanck'><p className="modalText" >More information on site Marvel</p></a>
+          
         </ModalBody >
         
         <ModalFooter className="modalFooter">

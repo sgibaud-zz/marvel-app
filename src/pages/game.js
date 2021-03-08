@@ -109,7 +109,7 @@ class Game extends Component {
             <div className="titleGame">
               <img className="imageGame" src={Fight} alt='picto fight' />
               <div className='gameRules btn-center'>
-                <div className="btn-rule" onClick={() => this.modal()}>Règle du jeu</div>
+                <div className="btn-rule" onClick={() => this.modal()}>Game rules</div>
               </div>
             </div>
 
@@ -121,25 +121,29 @@ class Game extends Component {
               <div className="containerFightersChoosen">
 
                 <div className='heroCard'>
-                  <h4 className='titleSlider'> LES ALLIÉS</h4>
+                  <h4 className='titleSlider'>ALLIES</h4>
+
+
+                  <img className="heroFight" src={lifeHero !== 0 ? `${choice1}` : `${dead}`} alt='' />
+
                   <Row className='rowProgressBar'>
                     <h4 className='titleProgressBar'>HP: </h4>
                     <ProgressBar className='progressBar' animated now={lifeHero} />
                   </Row>
-
-                  <img className="heroFight" src={lifeHero !== 0 ? `${choice1}` : `${dead}`} alt='' />
                 </div>
 
                 <div className='btn btnGame' onClick={() => this.attackCard()}>FIGHT</div>
 
                 {/* Enemies : Card qui affiche les points de vie ou null et condition suite état combat win or lose */}
                 <div className='heroCard'>
-                  <h4 className='titleSlider'>LES ENNEMIS</h4>
+                  <h4 className='titleSlider'>ENEMIES</h4>
+
+                  <img className="heroFight" src={lifeEnemi !== 0 ? `${choice2}` : `${dead}`} alt='' />
+
                   <Row className='rowProgressBar'>
                     <h4 className='titleProgressBar'>HP: </h4>
                     <ProgressBar className='progressBar' animated now={lifeEnemi} />
                   </Row>
-                  <img className="heroFight" src={lifeEnemi !== 0 ? `${choice2}` : `${dead}`} alt='' />
                 </div>
 
               </div>

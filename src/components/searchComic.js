@@ -25,7 +25,7 @@ class SearchComic extends Component {
                     id="searchInput"
                     onChange={this.handleChange}
                     type='text'
-                    placeholder="Entrez le nom d'un comic"
+                    placeholder="Enter the name of your favourite Marvel Comics"
                     value={this.state.inputText}
                 ></input>
                 <button

@@ -55,6 +55,7 @@
   color: #90dffe;
   transition: 0.5s ease-in;
   text-decoration: none;
+  cursor: pointer;
 }
 
 /* CSS Hero Carousel */
@@ -73,6 +74,7 @@
 
 .carousel-inner:hover {
   border: 1.5px solid white;
+  cursor: pointer;
 }
 
 .carousel-indicators {

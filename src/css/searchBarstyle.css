@@ -43,6 +43,7 @@
 #searchButton:hover{
     background-color:#080C14;
     border: 1px solid white;
+    cursor: pointer;
 }
 
 

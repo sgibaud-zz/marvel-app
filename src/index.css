@@ -44,6 +44,6 @@ h3 {
   font-weight: 700;
 }
 
-a, *:hover {
-  cursor: pointer;
+a:hover {
+  text-decoration: none;
 }

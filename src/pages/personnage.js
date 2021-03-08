@@ -10,6 +10,7 @@ import MarvelModal from '../components/modal';
 import SearchCharacter from '../components/SearchCharacter';
 import md5 from 'md5';
 
+
 //Import CSS
 import '../css/sliderCarousel.css';
 import '../css/searchBarstyle.css';
@@ -113,7 +114,7 @@ class Personnages extends Component {
 
         {
           this.state.isContentshow === true &&
-          <MarvelCard cardTitle="Les personnages Marvel"
+          <MarvelCard cardTitle="Marvel Characters"
             onClickCard={(id, name, thumbnail, description) => this.openModalWithId(id, name, thumbnail.path + '.' + thumbnail.extension, description)} />
         }
 

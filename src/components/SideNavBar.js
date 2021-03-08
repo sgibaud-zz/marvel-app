@@ -18,8 +18,8 @@ const SideNavBar = ({ close, display }) => {
         </div>
         
         <div className="links">
-          <Link to="/">Accueil</Link>
-          <Link to="/personnages">Personnages</Link>
+          <Link to="/">Home</Link>
+          <Link to="/personnages">Characters</Link>
           <Link to="/comics">Comics</Link>
           <Link to="/game">Game</Link>
         </div>

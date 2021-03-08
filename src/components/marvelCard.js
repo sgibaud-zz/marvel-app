@@ -1,6 +1,7 @@
 import React from 'react';
-import {Container} from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import md5 from 'md5';
+
 
 //Import CSS
 import '../css/sliderCarousel.css'
@@ -44,7 +45,7 @@ class MarvelCard extends React.Component {
                     <div>
                         <h3 className="titleSlider textCenter">{this.props.cardTitle}</h3>
 
-                        <div className="cardContainer">
+                        <div className="cardContainer margin-card">
 
                             {
                                 this.state.character
@@ -53,7 +54,7 @@ class MarvelCard extends React.Component {
 
                                         <div className='transitionCharacter' key={i} id={id} description={description}
                                             onClick={() => this.clickCard(id, name, thumbnail, description)}  >
-                                                
+
                                             <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} className='heroesCard' />
                                             <h4 className='overlayCharacter'>{name}</h4>
                                         </div>
