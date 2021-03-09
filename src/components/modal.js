@@ -13,7 +13,7 @@ class MarvelModal extends React.Component {
       <Modal show={this.props.openModalCharacter}  >
 
         <ModalHeader id={this.props.characterId} >
-          <ModalTitle >{this.props.heroName}</ModalTitle>
+          <ModalTitle>{this.props.heroName}</ModalTitle>
         </ModalHeader>
 
         <ModalBody>

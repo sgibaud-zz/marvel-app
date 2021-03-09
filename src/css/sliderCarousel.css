@@ -257,9 +257,9 @@
 
 /* Personnalisation du composant Modal*/
 .modal {
-  width: 25%;
+  width: 30%;
   top: 4%;
-  left: 38%;
+  left: 34%;
 }
 
 .modal-header {
@@ -270,10 +270,11 @@
 
 .modal-title {
   color: white;
+  font-size: 1rem;
 }
 
 .modal-content {
-  width: 90%;
+  width: 100%;
 }
 
 .modal-body {
@@ -286,6 +287,7 @@
 
 .modalText {
   padding: 1rem;
+  font-size: 0.8rem;
 }
 
 a {
@@ -521,13 +523,9 @@ a {
 
   /* Personnalisation du composant Modal*/
   .modal {
-    width: 75%;
+    width: 50%;
     top: 4%;
-    left: 14%;
-  }
-
-  .modal-title {
-    font-size: 1rem;
+    left: 30%;
   }
 
   .modal-body {
@@ -539,9 +537,14 @@ a {
     width: 100%;
   }
 
+  
+.modal-content {
+  width: 85%;
+}
+
   .modalText {
     padding: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     margin-bottom: 0.25rem;
     text-decoration-line: none;
   }

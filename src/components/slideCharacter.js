@@ -139,7 +139,6 @@ export default class SliderCharacter extends Component {
                                             className='marvelCatImg' />
                                         <h4 className='overlay'>{name}</h4>
                                     </div>
-
                                 </Col>
                             ))}
                 </Slider>
@@ -152,7 +151,6 @@ export default class SliderCharacter extends Component {
                     characterImg={this.state.characterImg}
                     description={this.state.description}
                 />
-
             </Container>
         );
     }

@@ -30,13 +30,13 @@ export default class SliderComics extends Component {
         const hash = md5(timestamp + API_PRIVATE_KEY + API_PUBLIC_KEY);
 
         // appel du fetch 
-        fetch(`https://gateway.marvel.com/v1/public/comics?hasDigitalIssue=false&ts=${timestamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
+        fetch(`https://gateway.marvel.com/v1/public/comics?format=comic&formatType=comic&hasDigitalIssue=false&offset=10&ts=${timestamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
             .then(resp => resp.json())
             .then(data => this.setState({comics:data.data.results}));
     }
 
-    clickComic(id, thumbnail, title) {
-        this.setState({ openModalComic: true, comicId: id, title: title, comicImg: thumbnail.path + '.' + thumbnail.extension });
+    clickComic(id, thumbnail, title, urls) {
+        this.setState({ openModalComic: true, comicId: id, title: title, comicImg: thumbnail.path + '.' + thumbnail.extension, urls: urls[0].url });
     }
 
 
@@ -117,9 +117,9 @@ export default class SliderComics extends Component {
                         {
                             this.state.comics
                                 .filter(image => image.thumbnail.path !== noImage)
-                                .map(({ id, thumbnail, title }, i) => (
-                                    <Col key={i} id={id} 
-                                        onClick={() => this.clickComic(id, thumbnail, title)}>
+                                .map(({ id, thumbnail, title, urls }, i) => (
+                                    <Col key={i} id={id} urls={`${urls[0].url}`}
+                                        onClick={() => this.clickComic(id, thumbnail, title, urls)}>
                                         <div className='transition'>
                                             <img src={`${thumbnail.path}.${thumbnail.extension}`}
                                                 alt={title} className='marvelCatImg marveCatComics' />
@@ -135,6 +135,7 @@ export default class SliderComics extends Component {
                     comicId={this.state.comicId}
                     title={this.state.title}
                     comicImg={this.state.comicImg}
+                    urls ={this.state.urls}
                 />
             </Container>
         );
