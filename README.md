@@ -7,19 +7,12 @@ Application créée par [Emerick Martial](https://github.com/Emerick971), [Sylva
 Il s'agit d'une application sur le thème de Marvel comprenant une librairie de personnages, une librairie de comics ainsi qu'un jeu de combat.
 L'application utilise l'[API officielle marvel] (https://developer.marvel.com/) ainsi qu'une base de données créée sur Firebase Real Time Database.
 
-### Technologies utilisées :
+## Technologies utilisées :
 - React.JS
 - JSX
 - HTML
 - CSS
 
+## Visualiser l'application :
 
-
-
-## Structure
-
-| Home | VideoPAge | About |
-| --- | --- | --- | 
-| <img src="https://raw.githubusercontent.com/sgibaud/troopshow/master/public/imgagesInfoTs/tsHome1a.gif">  | <img src="https://raw.githubusercontent.com/sgibaud/troopshow/master/public/imgagesInfoTs/tsVideoPage.png"> |  <img src="https://raw.githubusercontent.com/sgibaud/troopshow/master/public/imgagesInfoTs/tsabout2.gif">  | 
-| Donation | Contact | Connexion |
-| <img src="https://raw.githubusercontent.com/sgibaud/troopshow/master/public/imgagesInfoTs/tsDonation.png"> | <img src="https://raw.githubusercontent.com/sgibaud/troopshow/master/public/imgagesInfoTs/tScontact.png">  | <img src="https://raw.githubusercontent.com/sgibaud/troopshow/master/public/imgagesInfoTs/tsConnexion.png"> |
+http://wildcodeschool.draconic-graphisme.com
