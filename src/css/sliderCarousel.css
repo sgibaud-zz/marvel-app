@@ -521,6 +521,10 @@ a {
     margin: 0 auto;
   }
 
+  .characteristicBase {
+    font-size: 0.65rem;
+  }
+
   /* Personnalisation du composant Modal*/
   .modal {
     width: 50%;
@@ -661,6 +665,29 @@ a {
     margin-top: 1rem;
   }
 
+  .marvelCatImg {
+    width: inherit;
+    border-radius: 0.4rem;
+  }
+
+  .marvelCatImg:hover {
+    border: none;
+  }
+
+  #searchInput::placeholder {
+    font-size:0.75rem;
+  }
+
+  #searchInput {
+    padding-left: 6px;
+
+  }
+  
+  .modal {
+    width: 75%;
+    top: 4%;
+    left: 18%;
+  }
 
   .containerFightersChoosen {
     display: flex;
@@ -671,6 +698,10 @@ a {
 
   .heroFight {
     width: calc(17.5rem / 2.25);
+  }
+
+  .imageGame {
+    width: 100%;
   }
 
   .area {

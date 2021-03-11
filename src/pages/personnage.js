@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Container} from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 //component Marvel
 import NavBar from "../components/NavBar";
@@ -21,8 +21,8 @@ class Personnages extends Component {
     super(props);
     this.state = {
       sideBarOpen: false,
-      researchResult:null,
-      isContentshow:true
+      researchResult: null,
+      isContentshow: true
     };
   }
 
@@ -30,19 +30,19 @@ class Personnages extends Component {
 
   handleSearch = (inputText) => {
     const timestamp = Number(new Date());
-        const API_PUBLIC_KEY = process.env.REACT_APP_MARVEL_API_PUBLIC_KEY;
-        const API_PRIVATE_KEY = process.env.REACT_APP_MARVEL_API_PRIVATE_KEY;
-        const hash = md5(timestamp + API_PRIVATE_KEY + API_PUBLIC_KEY);
+    const API_PUBLIC_KEY = process.env.REACT_APP_MARVEL_API_PUBLIC_KEY;
+    const API_PRIVATE_KEY = process.env.REACT_APP_MARVEL_API_PRIVATE_KEY;
+    const hash = md5(timestamp + API_PRIVATE_KEY + API_PUBLIC_KEY);
 
-        // appel du fetch 
-        fetch(`https://gateway.marvel.com/v1/public/characters?nameStartsWith=${inputText}&ts=${timestamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
-            .then(resp => resp.json())
-            .then(data => this.displayItem(data));
+    // appel du fetch 
+    fetch(`https://gateway.marvel.com/v1/public/characters?nameStartsWith=${inputText}&ts=${timestamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`)
+      .then(resp => resp.json())
+      .then(data => this.displayItem(data));
   }
 
   displayItem = (data) => {
-    this.setState({researchResult:data.data.results})
-    this.setState({isContentshow:false});
+    this.setState({ researchResult: data.data.results })
+    this.setState({ isContentshow: false });
   }
 
   handleOpen = () => {
@@ -57,7 +57,7 @@ class Personnages extends Component {
     });
   };
 
-  
+
   openModalWithId(id, name, thumbnail, description) {
     this.setState({ openModalCharacter: true, characterId: id, heroName: name, characterImg: thumbnail, description: description });
   }
@@ -86,21 +86,21 @@ class Personnages extends Component {
         </div>
 
         <SearchCharacter
-        handleSearch={this.handleSearch}
+          handleSearch={this.handleSearch}
         />
 
         <div className="cardContainer">
-        {
-          this.state.researchResult != null &&
-          this.state.researchResult
-          .filter(image => image.thumbnail.path !== noImage && image.thumbnail.path !== noGif && image.description !== '')
-          .map(({ id, thumbnail, name, description }, i) => (                    
-            <picture className='transitionCharacter' key={i} id={id} description={description}
-            onClick={() => this.clickCard(id, name, thumbnail, description)} >
-                <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} className='heroesCard' />
-                <h4 className='overlayCharacter titleName'>{name}</h4>
-            </picture>
-    ))}
+          {
+            this.state.researchResult != null &&
+            this.state.researchResult
+              .filter(image => image.thumbnail.path !== noImage && image.thumbnail.path !== noGif && image.description !== '')
+              .map(({ id, thumbnail, name, description }, i) => (
+                <picture className='transitionCharacter' key={i} id={id} description={description}
+                  onClick={() => this.clickCard(id, name, thumbnail, description)} >
+                  <img src={`${thumbnail.path}.${thumbnail.extension}`} alt={name} className='heroesCard' />
+                  <h4 className='overlayCharacter titleName'>{name}</h4>
+                </picture>
+              ))}
 
 
 
