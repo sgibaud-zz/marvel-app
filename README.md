@@ -5,13 +5,12 @@ Application créée par [Emerick Martial](https://github.com/Emerick971), [Sylva
 ## Présentation de l'application
 
 Il s'agit d'une application sur le thème de Marvel comprenant une librairie de personnages, une librairie de comics ainsi qu'un jeu de combat.
-L'application utilise l'[API officielle marvel] (https://developer.marvel.com/) ainsi qu'une base de données créée sur Firebase Real Time Database.
+L'application utilise l'[API officielle marvel](https://developer.marvel.com/) ainsi qu'une base de données créée sur Firebase Real Time Database.
 
 ## Technologies utilisées :
 - React.JS
-- JSX
 - HTML
-- CSS
+- CSS/Bootstrap/Material-Ui
 
 ## Visualiser l'application :
 
