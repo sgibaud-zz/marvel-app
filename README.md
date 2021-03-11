@@ -1,4 +1,4 @@
-# ![TroopShow logo](https://github.com/sgibaud/marvel-app/blob/master/public/logo.jpg)
+# ![MARVEL logo](https://github.com/sgibaud/marvel-app/blob/master/public/logo.jpg)
 
 Application créée par [Emerick Martial](https://github.com/Emerick971), [Sylvain Gibaud](https://github.com/sgibaud) et [Mylène Carrara](https://github.com/Mylene33) dans le cadre d'un projet de groupe de la formation Front-End Web Developer de la [Wild Code School](https://www.wildcodeschool.com/).
 
