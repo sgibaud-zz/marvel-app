@@ -1,28 +1,20 @@
-# ![TroopShow logo](https://raw.githubusercontent.com/sgibaud/troopshow/master/public/imgagesInfoTs/Logoneg.svg)
+# ![TroopShow logo](https://github.com/sgibaud/marvel-app/blob/master/public/marvel_logo.svg)
 
-This project was create by [Clara Josse](https://github.com/ClaraJosse), [Mayte Valdez](https://github.com/mayte-valdez), [Emerick Martial](https://github.com/Emerick971) and [Sylvain Gibaud](https://github.com/sgibaud).   
-This was the result of 24h codding, during a intern Hackathon organized by the [Wild Code School](https://www.wildcodeschool.com/) in parnertship with [Twilio](https://www.twilio.org/) as a part of Remote front-end developer training course.
+Application créée par [Emerick Martial](https://github.com/Emerick971), [Sylvain Gibaud](https://github.com/sgibaud) et [Mylène Carrara](https://github.com/Mylene33) dans le cadre d'un projet de groupe de la formation Front-End Web Developer de la [Wild Code School](https://www.wildcodeschool.com/).
 
+## Présentation de l'application
 
-## About the projet
-TroopShow is a non profit platform in order to help the local performing artists with donations
-### OUR GOALS :
-- Support the local the performing artists
-- Collect donations
-- Make a platform easy to use
-- Responsive site
-- Offer quality and verified content
+Il s'agit d'une application sur le thème de Marvel comprenant une librairie de personnages, une librairie de comics ainsi qu'un jeu de combat.
+L'application utilise l'[API officielle marvel] (https://developer.marvel.com/) ainsi qu'une base de données créée sur Firebase Real Time Database.
 
-### TARGETS :
-- Freelance performing artists / local artist
-- People interested in support their community and/or the performing arts
-- Companies wishing to support the platform
-
-### STRATEGIC CHOICES :
+### Technologies utilisées :
 - React.JS
-- Responsive via BOOTSTRAP/REACT 
-- CSS for the style
-- SCRUM methode
+- JSX
+- HTML
+- CSS
+
+
+
 
 ## Structure
 
