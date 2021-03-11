@@ -11,6 +11,7 @@ L'application utilise l'[API officielle marvel](https://developer.marvel.com/) a
 - React.JS
 - HTML
 - CSS/Bootstrap/Material-Ui
+- Firebase
 
 ## Visualiser l'application :
 
