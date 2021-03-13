@@ -21,10 +21,10 @@ class Game extends Component {
     super(props);
 
     this.state = {
-      choice1: 'http://wildcodeschool.draconic-graphisme.com/marvel/shadow.jpg',
-      choice2: "http://wildcodeschool.draconic-graphisme.com/marvel/shadow.jpg",
-      dead: 'http://wildcodeschool.draconic-graphisme.com/marvel/dead.gif',
-      winner: "http://wildcodeschool.draconic-graphisme.com/marvel/gif-deadpool-2.gif",
+      choice1: 'http://marvel.draconic-graphisme.com/marvel/shadow.jpg',
+      choice2: "http://marvel.draconic-graphisme.com/marvel/shadow.jpg",
+      dead: 'http://marvel.draconic-graphisme.com/marvel/dead.gif',
+      winner: "http://marvel.draconic-graphisme.com/marvel/gif-deadpool-2.gif",
       sideBarOpen: false,
 
       lifeHero: '',
