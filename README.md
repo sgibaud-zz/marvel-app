@@ -15,4 +15,4 @@ L'application utilise l'[API officielle marvel](https://developer.marvel.com/) a
 
 ## Visualiser l'application :
 
-http://wildcodeschool.draconic-graphisme.com
+http://marvel.draconic-graphisme.com
